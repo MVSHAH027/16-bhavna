@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>૧૬ ભાવના (16 Bhavna)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-gujarati {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+        }
+        /* Simple fade-in animation for sections */
+        .bhavna-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Staggered animation delay for each section */
+        .bhavna-section:nth-child(1) { animation-delay: 0.1s; }
+        .bhavna-section:nth-child(2) { animation-delay: 0.2s; }
+        .bhavna-section:nth-child(3) { animation-delay: 0.3s; }
+        .bhavna-section:nth-child(4) { animation-delay: 0.4s; }
+        .bhavna-section:nth-child(5) { animation-delay: 0.5s; }
+        .bhavna-section:nth-child(6) { animation-delay: 0.6s; }
+        .bhavna-section:nth-child(7) { animation-delay: 0.7s; }
+        .bhavna-section:nth-child(8) { animation-delay: 0.8s; }
+        .bhavna-section:nth-child(9) { animation-delay: 0.9s; }
+        .bhavna-section:nth-child(10) { animation-delay: 1.0s; }
+        .bhavna-section:nth-child(11) { animation-delay: 1.1s; }
+        .bhavna-section:nth-child(12) { animation-delay: 1.2s; }
+        .bhavna-section:nth-child(13) { animation-delay: 1.3s; }
+        .bhavna-section:nth-child(14) { animation-delay: 1.4s; }
+        .bhavna-section:nth-child(15) { animation-delay: 1.5s; }
+        .bhavna-section:nth-child(16) { animation-delay: 1.6s; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Main Container -->
+    <div class="max-w-2xl mx-auto bg-white shadow-lg">
+        
+        <!-- Header -->
+        <header class="sticky top-0 bg-white/80 backdrop-blur-md z-10 p-4 border-b-2 border-amber-500">
+            <div class="flex justify-between items-center">
+                <h1 id="main-title" class="text-2xl md:text-3xl font-bold text-amber-700 font-gujarati">૧૬ ભાવના</h1>
+                <div class="flex space-x-2">
+                    <button id="btn-gu" class="px-4 py-2 text-sm font-semibold text-white bg-amber-600 rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-75 transition">ગુજરાતી</button>
+                    <button id="btn-en" class="px-4 py-2 text-sm font-semibold text-amber-700 bg-amber-100 rounded-lg shadow-md hover:bg-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-75 transition">English</button>
+                </div>
+            </div>
+            <p id="author-credit" class="text-sm text-gray-600 mt-2 font-gujarati">રચયિતા: આચાર્ય શ્રી હેમચન્દ્રસૂરિ</p>
+        </header>
+
+        <!-- Infographics Content -->
+        <main id="content-area" class="p-4 md:p-6 space-y-8">
+            <!-- Bhavnas will be dynamically inserted here by JavaScript -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white text-center p-4">
+            <p id="footer-credit" class="font-semibold font-gujarati">મનીષ વી. શાહ</p>
+            <p id="footer-contact" class="text-sm text-gray-300">વોટ્સએપ: 94299 26447 (વડોદરા)</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Data for all 16 Bhavnas in both languages
+        const bhavnaData = [
+            {
+                gu: { title: 'અનિત્ય ભાવના', desc: 'આ જગતમાં જે કાંઈ પણ દેખાય છે તે બધું જ અનિત્ય છે. ઘર, શરીર, સ્વજન, સંપત્તિ, સત્તા, યૌવન, આરોગ્ય, યશ બધું જ અનિત્ય છે, નશ્વર છે. જે નાશવંત છે એના રાગથી તું નાશ પામતો રહીશ. જે શાશ્વત છે, એના રાગથી તું શાશ્વત બની જઈશ.' },
+                en: { title: 'Anitya Bhavna (Impermanence)', desc: 'Everything visible in this world is impermanent. Home, body, relatives, wealth, power, youth, health, and fame are all transient. Attachment to the perishable will lead to your own destruction. Attachment to the eternal will make you eternal.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M18 6L6 18M6 6l12 12"/></svg>`,
+                color: 'red'
+            },
+            {
+                gu: { title: 'અશરણ ભાવના', desc: 'તું વિચાર કે કોણ છે તારું શરણ? રાજા, મહારાજા, દેવો પણ અશરણ હોય છે. એક જ વ્યક્તિ તને જન્મ, જરા, મરણથી બચાવી શકે છે: જિનધર્મ. તું એનું શરણ લઈ લે, તારું કામ થઈ જશે.' },
+                en: { title: 'Asharan Bhavna (Helplessness)', desc: 'Contemplate, who is your refuge? Even kings, emperors, and gods are without refuge. Only one thing can save you from birth, old age, and death: the Jain Dharma. Take its refuge, and your purpose will be served.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>`,
+                color: 'orange'
+            },
+            {
+                gu: { title: 'સંસાર ભાવના', desc: 'ચોર્યાશી લાખ યોનિમાં તું અનંત વાર જન્મી-મરી ચૂક્યો છે. સંસારનું કોઈ સુખ-દુઃખ નથી જે તે ભોગવ્યું ન હોય. બસ, હવે આ સંસારથી કંટાળ અને તારા મનને મોક્ષમાં સ્થિર કર.' },
+                en: { title: 'Sansar Bhavna (Worldly Cycle)', desc: 'You have been born and have died infinite times in 8.4 million life forms. There is no worldly pleasure or pain you haven\'t experienced. Now, get tired of this cycle and fix your mind on liberation (Moksha).' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>`,
+                color: 'amber'
+            },
+            {
+                gu: { title: 'એકત્વ ભાવના', desc: 'જીવ એકલો જ જન્મે છે અને એકલો જ મરે છે. તારું કોઈ જ નથી, તું કોઈનો નથી. તું એકલો છે. એકત્વ એ તારી કમનસીબી નથી, તારું ઐશ્વર્ય છે. છોડી દે ભ્રમણા ને એકત્વની મસ્તીમાં મસ્ત થઈ જા.' },
+                en: { title: 'Ekatva Bhavna (Solitude)', desc: 'A soul is born alone and dies alone. No one is yours, and you belong to no one. You are alone. Solitude is not your misfortune; it is your splendor. Abandon the illusion and revel in the bliss of solitude.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.93 19.07 1.41-1.41"/><path d="m17.66 6.34 1.41-1.41"/></svg>`,
+                color: 'yellow'
+            },
+            {
+                gu: { title: 'અન્યત્વ ભાવના', desc: 'શરીર જુદું છે ને તું જુદો છે. એ જડ - તું ચેતન, એ નશ્વર - તું શાશ્વત. તારા ભવભ્રમણનું મૂળ છે અળગાને વળગવાનું ગાંડપણ. તને \'અન્ય\'ની કોઈ જરૂર જ નથી.' },
+                en: { title: 'Anyatva Bhavna (Separateness)', desc: 'The body is separate, and you (the soul) are separate. It is inert - you are conscious. It is mortal - you are eternal. The root of your wandering is the madness of clinging to what is separate. You do not need the \'other\'.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+                color: 'lime'
+            },
+            {
+                gu: { title: 'અશુચિ ભાવના', desc: 'આખી દુનિયામાં ગંદામાં ગંદી વસ્તુ શરીર છે. નવ છિદ્રોમાંથી ગંદકી ઝર્યા જ કરે છે. તું લાખ સાબુ લગાડ, શરીર તો અશુચિ જ રહેવાનું છે. એની આસક્તિ છોડી દે અને તારા પરમ શુચિ સ્વરૂપમાં મગ્ન થઈ જા.' },
+                en: { title: 'Ashuchi Bhavna (Impurity)', desc: 'The most impure thing in the world is the body. Filth constantly oozes from its nine orifices. You may use a million soaps, but the body will remain impure. Abandon attachment to it and immerse yourself in your supremely pure nature.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M20 12c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 2.209 1.791 4 4 4s4-1.791 4-4z"/><path d="M12 12c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 2.209 1.791 4 4 4s4-1.791 4-4z"/><path d="M12 20c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4z"/></svg>`,
+                color: 'green'
+            },
+            {
+                gu: { title: 'આશ્રવ ભાવના', desc: 'મિથ્યાત્વ, અવિરતિ, કષાય અને યોગ આ ચાર કારણોથી આત્મામાં કર્મોની ઘુસણખોરી થાય છે, એનું નામ આશ્રવ. બહાર ઘણું જોયું, હવે અંદર જો, આ આશ્રવોને જો.' },
+                en: { title: 'Asrava Bhavna (Influx of Karma)', desc: 'The influx of karmas into the soul due to wrong belief, non-restraint, passions, and activities is Asrava. You have seen much outside; now look inside, see these influxes.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+                color: 'emerald'
+            },
+            {
+                gu: { title: 'સંવર ભાવના', desc: 'આશ્રવોના બધાં જ છિદ્રોને ઢાંકી દેવા અને કર્મોની ઘુસણખોરી બંધ કરવી એનું નામ સંવર. તું ક્ષમાથી ક્રોધને, કોમળતાથી અભિમાનને, સરળતાથી માયાને અને સંતોષથી લોભને રોક.' },
+                en: { title: 'Samvar Bhavna (Stoppage of Karma)', desc: 'To cover all the channels of influx and stop the entry of karmas is Samvar. Stop anger with forgiveness, pride with humility, deceit with straightforwardness, and greed with contentment.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+                color: 'teal'
+            },
+            {
+                gu: { title: 'નિર્જરા ભાવના', desc: 'સંસારનું બીજ છે કર્મ, એને તપ દ્વારા ખપાવવા એ સકામ નિર્જરા છે. તપની આગથી આત્મા શુદ્ધ થાય છે. હવે તું તપની આગ પેટાવ અને તારા કર્મોને ભસ્મીભૂત કરી દે.' },
+                en: { title: 'Nirjara Bhavna (Shedding of Karma)', desc: 'The seed of the world is karma; to consciously burn it away through penance is Sakam Nirjara. The soul is purified by the fire of austerity. Now, ignite the fire of penance and incinerate your karmas.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-1.12-2.5-2.5-2.5S6 10.62 6 12a2.5 2.5 0 0 0 2.5 2.5z"/><path d="M12.5 10.5A2.5 2.5 0 0 1 15 8c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M12 22a7 7 0 0 0 7-7h-4a3 3 0 0 0-3 3v4z"/><path d="M12 2a7 7 0 0 0-7 7h4a3 3 0 0 0 3-3V2z"/><path d="M5 12a7 7 0 0 0 7 7v-4a3 3 0 0 0-3-3H5z"/><path d="M22 12a7 7 0 0 0-7-7v4a3 3 0 0 0 3 3h4z"/></svg>`,
+                color: 'cyan'
+            },
+            {
+                gu: { title: 'ધર્મ સ્વાખ્યાતતા ભાવના', desc: 'જિનેશ્વર ભગવંતે કેવો સુંદર અને શુદ્ધ ધર્મ કહ્યો! ક્ષમા, કોમળતા, સરળતા, તપ, સંયમ, સત્ય, શૌચ, અકિંચનતા અને બ્રહ્મચર્ય - આનું નામ જિનધર્મ. બાહ્ય અને આંતર સુખ-સમૃદ્ધિનો એક માત્ર સ્રોત ધર્મ જ છે.' },
+                en: { title: 'Dharma Swakhyatata Bhavna (Well-proclaimed Dharma)', desc: 'How beautiful and pure is the Dharma proclaimed by the Jinas! Forgiveness, humility, simplicity, penance, restraint, truth, purity, non-possession, and celibacy - this is Jain Dharma. Dharma is the only source of all external and internal happiness and prosperity.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>`,
+                color: 'sky'
+            },
+            {
+                gu: { title: 'લોકસ્વભાવ ભાવના', desc: 'આ વિશ્વમાં ક્યાંક સુખ છે, ક્યાંક દુઃખ છે. ક્યાંક ઉત્સવો છે, ક્યાંક યુદ્ધો છે. તું વિવેકદષ્ટિથી આ વિશ્વને જો. એનાથી તને તારા સુખ-દુઃખ વજૂદ વગરના લાગશે અને તારું મન સ્થિર થશે.' },
+                en: { title: 'Lokasvabhava Bhavna (Nature of the Universe)', desc: 'In this universe, there is happiness somewhere and sorrow elsewhere. There are festivals and there are wars. Look at this world with a discerning eye. Your own joys and sorrows will seem insignificant, and your mind will become stable.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20z"/><path d="M2 12h20"/></svg>`,
+                color: 'blue'
+            },
+            {
+                gu: { title: 'બોધિદુર્લભ ભાવના', desc: 'અનંત પુણ્યના ઉદય પછી માનવભવ, આર્ય દેશ, ઉચ્ચ કુળ, સદ્દગુરુ અને ધર્મશ્રવણ મળે છે. પણ શ્રદ્ધા પ્રગટે અને બોધિલાભ થાય એ અત્યંત દુર્લભ છે. માંડ તારા હાથમાં આવ્યું છે, તું તારું કલ્યાણ કરી લે.' },
+                en: { title: 'Bodhidurlabh Bhavna (Rarity of Enlightenment)', desc: 'After accumulating immense merit, one gets a human birth, a noble land, a high family, a true guru, and the opportunity to listen to Dharma. But for faith to arise and enlightenment to be attained is extremely rare. It has come into your hands with great difficulty; ensure your own welfare.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z"/></svg>`,
+                color: 'indigo'
+            },
+            {
+                gu: { title: 'મૈત્રી ભાવના', desc: 'દુનિયામાં કોઈ પાપો ન કરો અને દુનિયામાં કોઈ દુઃખી ન થાઓ. બધાં જીવો મોક્ષ પામો. તારું કોઈ જ દુશ્મન નથી, બધા જ તારા મિત્ર છે. આ ભાવ તું આખી દુનિયા માટે લાવી દે.' },
+                en: { title: 'Maitri Bhavna (Friendship)', desc: 'May no one in the world commit sins, and may no one be unhappy. May all beings attain liberation. You have no enemies; everyone is your friend. Bring this feeling for the entire world.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
+                color: 'violet'
+            },
+            {
+                gu: { title: 'પ્રમોદ ભાવના', desc: 'ગુણીજનોના ગુણોને જોઈને મનોમન આનંદથી નાચી ઉઠવું એનું નામ પ્રમોદ ભાવના. અરિહંત, સિદ્ધ, આચાર્ય, ઉપાધ્યાય અને સાધુઓના ગુણોને જો. જો આ નાચ આવડી જાય તો સંસારનો બધો જ નાચ મટી જશે.' },
+                en: { title: 'Pramod Bhavna (Appreciation)', desc: 'To dance with inner joy upon seeing the virtues of the virtuous is Pramod Bhavna. Look at the qualities of the Arihants, Siddhas, Acharyas, Upadhyayas, and Sadhus. If you learn this dance, the dance of the worldly cycle will cease.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>`,
+                color: 'purple'
+            },
+            {
+                gu: { title: 'કરુણા ભાવના', desc: 'દીન, દુઃખી, ભયભીત અને પાપી જીવો માટે એવી લાગણી જાગે કે હું એમના દુઃખો અને પાપોને હરું, એનું નામ કરુણા ભાવના. તારા દુઃખો કરતા દુનિયાના દુઃખો અનંતગણા છે.' },
+                en: { title: 'Karuna Bhavna (Compassion)', desc: 'To feel for the poor, suffering, frightened, and sinful beings that you wish to remove their sorrows and sins, is Karuna Bhavna. The sorrows of the world are infinitely greater than your own.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0Z"/><path d="M12 8v4l-1.14 2.28"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>`,
+                color: 'fuchsia'
+            },
+            {
+                gu: { title: 'માધ્યસ્થ્ય ભાવના', desc: 'જે જીવો ક્રૂરકર્મી છે, દેવ-ગુરુની નિંદા કરનારા છે, એવા ભારેકર્મી જીવો માટે ઉપેક્ષાભાવ રાખવો એનું નામ માધ્યસ્થ્ય ભાવના. પારકી ચિંતા છોડી દે ને તારા શુદ્ધ સ્વભાવમાં ડુબી જા.' },
+                en: { title: 'Madhyasthya Bhavna (Equanimity)', desc: 'To maintain a sense of neutrality towards those who are cruel, who slander gods and gurus, is Madhyasthya Bhavna. Abandon worrying about others and immerse yourself in your own pure nature.' },
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12"><path d="M5 12h14"/><path d="M12 5l-7 7 7 7"/></svg>`,
+                color: 'pink'
+            }
+        ];
+
+        // Color mapping for Tailwind CSS
+        const colors = {
+            red: { bg: 'bg-red-100', text: 'text-red-800', border: 'border-red-300' },
+            orange: { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300' },
+            amber: { bg: 'bg-amber-100', text: 'text-amber-800', border: 'border-amber-300' },
+            yellow: { bg: 'bg-yellow-100', text: 'text-yellow-800', border: 'border-yellow-300' },
+            lime: { bg: 'bg-lime-100', text: 'text-lime-800', border: 'border-lime-300' },
+            green: { bg: 'bg-green-100', text: 'text-green-800', border: 'border-green-300' },
+            emerald: { bg: 'bg-emerald-100', text: 'text-emerald-800', border: 'border-emerald-300' },
+            teal: { bg: 'bg-teal-100', text: 'text-teal-800', border: 'border-teal-300' },
+            cyan: { bg: 'bg-cyan-100', text: 'text-cyan-800', border: 'border-cyan-300' },
+            sky: { bg: 'bg-sky-100', text: 'text-sky-800', border: 'border-sky-300' },
+            blue: { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-300' },
+            indigo: { bg: 'bg-indigo-100', text: 'text-indigo-800', border: 'border-indigo-300' },
+            violet: { bg: 'bg-violet-100', text: 'text-violet-800', border: 'border-violet-300' },
+            purple: { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-300' },
+            fuchsia: { bg: 'bg-fuchsia-100', text: 'text-fuchsia-800', border: 'border-fuchsia-300' },
+            pink: { bg: 'bg-pink-100', text: 'text-pink-800', border: 'border-pink-300' }
+        };
+
+        const contentArea = document.getElementById('content-area');
+        const mainTitle = document.getElementById('main-title');
+        const authorCredit = document.getElementById('author-credit');
+        const footerCredit = document.getElementById('footer-credit');
+        const footerContact = document.getElementById('footer-contact');
+        const btnGu = document.getElementById('btn-gu');
+        const btnEn = document.getElementById('btn-en');
+
+        // Function to render the content based on the selected language
+        function renderContent(lang) {
+            // Clear previous content
+            contentArea.innerHTML = '';
+            
+            // Set main titles and footer text
+            if (lang === 'gu') {
+                document.documentElement.lang = 'gu';
+                mainTitle.textContent = '૧૬ ભાવના';
+                mainTitle.classList.add('font-gujarati');
+                authorCredit.textContent = 'રચયિતા: આચાર્ય શ્રી હેમચન્દ્રસૂરિ';
+                authorCredit.classList.add('font-gujarati');
+                footerCredit.textContent = 'મનીષ વી. શાહ';
+                footerCredit.classList.add('font-gujarati');
+                footerContact.textContent = 'વોટ્સએપ: 94299 26447 (વડોદરા)';
+                footerContact.classList.add('font-gujarati');
+            } else {
+                document.documentElement.lang = 'en';
+                mainTitle.textContent = '16 Bhavnas';
+                mainTitle.classList.remove('font-gujarati');
+                authorCredit.textContent = 'Written by: Acharya Shri Hemchandrasuri';
+                authorCredit.classList.remove('font-gujarati');
+                footerCredit.textContent = 'Manish V. Shah';
+                footerCredit.classList.remove('font-gujarati');
+                footerContact.textContent = 'WhatsApp: 94299 26447 (Vadodara)';
+                footerContact.classList.remove('font-gujarati');
+            }
+
+            // Generate and append each Bhavna section
+            bhavnaData.forEach((bhavna, index) => {
+                const content = bhavna[lang];
+                const colorTheme = colors[bhavna.color];
+
+                const section = document.createElement('section');
+                section.className = `bhavna-section p-4 rounded-xl border-l-4 ${colorTheme.border} ${colorTheme.bg} flex items-start space-x-4`;
+                
+                const iconContainer = document.createElement('div');
+                iconContainer.className = `flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full ${colorTheme.text.replace('text-','bg-').replace('-800','-200')}`;
+                iconContainer.innerHTML = bhavna.icon;
+                iconContainer.firstElementChild.classList.add(colorTheme.text);
+
+                const textContainer = document.createElement('div');
+                
+                const title = document.createElement('h2');
+                title.className = `text-xl font-bold ${colorTheme.text}`;
+                title.textContent = `${index + 1}. ${content.title}`;
+                
+                const desc = document.createElement('p');
+                desc.className = 'text-gray-700 mt-1 text-base leading-relaxed';
+                desc.textContent = content.desc;
+
+                if (lang === 'gu') {
+                    title.classList.add('font-gujarati');
+                    desc.classList.add('font-gujarati');
+                } else {
+                    title.classList.remove('font-gujarati');
+                    desc.classList.remove('font-gujarati');
+                }
+
+                textContainer.appendChild(title);
+                textContainer.appendChild(desc);
+                section.appendChild(iconContainer);
+                section.appendChild(textContainer);
+
+                contentArea.appendChild(section);
+            });
+        }
+
+        // Function to handle language button state
+        function updateButtonStyles(selectedLang) {
+            if (selectedLang === 'gu') {
+                btnGu.classList.remove('bg-amber-100', 'text-amber-700');
+                btnGu.classList.add('bg-amber-600', 'text-white');
+                btnEn.classList.remove('bg-amber-600', 'text-white');
+                btnEn.classList.add('bg-amber-100', 'text-amber-700');
+            } else {
+                btnEn.classList.remove('bg-amber-100', 'text-amber-700');
+                btnEn.classList.add('bg-amber-600', 'text-white');
+                btnGu.classList.remove('bg-amber-600', 'text-white');
+                btnGu.classList.add('bg-amber-100', 'text-amber-700');
+            }
+        }
+
+        // Event listeners for language buttons
+        btnGu.addEventListener('click', () => {
+            renderContent('gu');
+            updateButtonStyles('gu');
+        });
+
+        btnEn.addEventListener('click', () => {
+            renderContent('en');
+            updateButtonStyles('en');
+        });
+
+        // Initial render on page load
+        window.onload = () => {
+            renderContent('gu');
+            updateButtonStyles('gu');
+        };
+    </script>
+</body>
+</html>

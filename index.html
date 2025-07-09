@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>૧૬ ભાવના : સાચા સુખના સુવર્ણ નિયમો</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Set default fonts */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            scroll-behavior: smooth;
+        }
+        /* Apply Gujarati font to elements with the 'gujarati' class */
+        .gujarati {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+        }
+        /* Style for the active language button */
+        .lang-btn.active {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        /* Animation for cards */
+        .content-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto px-4 py-8 sm:px-6 sm:py-12">
+
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 id="main-title" class="text-4xl md:text-5xl font-bold text-indigo-700 gujarati">સાચા સુખના ૧૬ સુવર્ણ નિયમો</h1>
+            <p id="main-subtitle" class="mt-3 text-lg text-slate-600 gujarati">આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા લખાયેલ '૧૬ ભાવના' પર આધારિત</p>
+            
+            <!-- Language Switcher -->
+            <div class="mt-8 inline-flex rounded-full bg-slate-200 p-1.5 shadow-inner">
+                <button id="btn-gu" class="lang-btn active rounded-full py-2 px-6 text-sm font-semibold transition-all gujarati">ગુજરાતી</button>
+                <button id="btn-en" class="lang-btn rounded-full py-2 px-6 text-sm font-semibold transition-all">English</button>
+            </div>
+        </header>
+
+        <main class="space-y-12">
+            <!-- Videos and Podcasts Section -->
+            <section>
+                <h2 id="video-title" class="text-2xl font-bold border-b-2 border-indigo-200 pb-2 mb-6 gujarati">વિડિઓ અને પોડકાસ્ટ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1: Gujarati Video -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.1s;">
+                        <h3 id="vid1-title" class="text-lg font-semibold text-indigo-800 gujarati">૧૬ ભાવના (ટૂંકમાં)</h3>
+                        <p id="vid1-desc" class="text-sm text-slate-600 mt-2 mb-4 gujarati">સાચા સુખના ૧૬ સુવર્ણ નિયમોની સંક્ષિપ્ત અને સુંદર રજૂઆત.</p>
+                        <a href="https://youtu.be/ryLnmx01Gwk" target="_blank" class="inline-flex items-center justify-center w-full bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
+                            <span data-lang-key="watch-video">વિડિઓ જુઓ</span>
+                        </a>
+                    </div>
+                    <!-- Card 2: Podcast -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.2s;">
+                        <h3 id="vid2-title" class="text-lg font-semibold text-indigo-800 gujarati">પોડકાસ્ટ: ૧૬ ભાવના</h3>
+                        <p id="vid2-desc" class="text-sm text-slate-600 mt-2 mb-4 gujarati">દરેક ભાવના ના ઊંડા રહસ્યોની સમજણ.</p>
+                        <a href="https://youtu.be/mDtbb_5EGNo" target="_blank" class="inline-flex items-center justify-center w-full bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v3a2 2 0 01-2 2H4a2 2 0 01-2-2v-3z" /></svg>
+                            <span data-lang-key="listen-podcast">પોડકાસ્ટ સાંભળો</span>
+                        </a>
+                    </div>
+                    <!-- Card 3: English Video -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2" style="animation-delay: 0.3s;">
+                        <h3 id="vid3-title" class="text-lg font-semibold text-indigo-800">16 Golden Rules of True Happiness</h3>
+                        <p id="vid3-desc" class="text-sm text-slate-600 mt-2 mb-4">An English explanation of the 16 contemplations for a wider audience.</p>
+                        <a href="https://youtu.be/XEPqARzRcow" target="_blank" class="inline-flex items-center justify-center w-full bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
+                            <span data-lang-key="watch-video-en">Watch Video</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Content Section -->
+            <section>
+                <h2 id="interactive-title" class="text-2xl font-bold border-b-2 border-indigo-200 pb-2 mb-6 gujarati">વાંચો અને જ્ઞાન ચકાસો</h2>
+                <div class="space-y-6">
+                    <!-- Card 4: Full Info -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row items-start sm:items-center gap-4" style="animation-delay: 0.4s;">
+                        <div class="flex-shrink-0 bg-indigo-100 text-indigo-600 p-3 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg></div>
+                        <div class="flex-grow">
+                            <h3 id="link1-title" class="text-lg font-semibold text-indigo-800 gujarati">સંપૂર્ણ વિગતવાર માહિતી</h3>
+                            <p id="link1-desc" class="text-sm text-slate-600 mt-1 gujarati">દરેક ભાવનાને ઊંડાણપૂર્વક સમજો. ગુજરાતી અને અંગ્રેજી બંને ભાષામાં ઉપલબ્ધ.</p>
+                        </div>
+                        <a href="full-info.html" class="flex-shrink-0 w-full sm:w-auto bg-indigo-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-indigo-700 transition-colors text-center" data-lang-key="read-now">હવે વાંચો</a>
+                    </div>
+                    <!-- Card 5: Infographics -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row items-start sm:items-center gap-4" style="animation-delay: 0.5s;">
+                        <div class="flex-shrink-0 bg-teal-100 text-teal-600 p-3 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
+                        <div class="flex-grow">
+                            <h3 id="link2-title" class="text-lg font-semibold text-teal-800 gujarati">દ્રશ્ય પ્રસ્તુતિ (Infographics)</h3>
+                            <p id="link2-desc" class="text-sm text-slate-600 mt-1 gujarati">રંગબેરંગી અને આકર્ષક ચિત્રો દ્વારા ૧૬ ભાવનાને સરળતાથી યાદ રાખો.</p>
+                        </div>
+                        <a href="infographics.html" class="flex-shrink-0 w-full sm:w-auto bg-teal-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-teal-700 transition-colors text-center" data-lang-key="view-now">હવે જુઓ</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quizzes Section -->
+            <section>
+                 <h2 id="quiz-title" class="text-2xl font-bold border-b-2 border-amber-300 pb-2 mb-6 gujarati">જ્ઞાનવર્ધક ક્વિઝ</h2>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 6: Quiz -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.6s;">
+                        <h3 id="link3-title" class="text-lg font-semibold text-amber-800 gujarati">તમારા જ્ઞાનને ચકાસો</h3>
+                        <p id="link3-desc" class="text-sm text-slate-600 mt-2 mb-4 gujarati">૧૬ ભાવના પર આધારિત પ્રશ્નોના જવાબ આપીને તમારી સમજને વધુ મજબૂત બનાવો.</p>
+                        <a href="quiz.html" class="inline-flex items-center justify-center w-full bg-amber-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors" data-lang-key="start-quiz">ક્વિઝ શરૂ કરો</a>
+                    </div>
+                    <!-- Card 7: Odd One Out Quiz -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.7s;">
+                        <h3 id="link4-title" class="text-lg font-semibold text-amber-800 gujarati">આમાંથી અલગ શું છે?</h3>
+                        <p id="link4-desc" class="text-sm text-slate-600 mt-2 mb-4 gujarati">તમારી તર્ક શક્તિનો ઉપયોગ કરીને દરેક ભાવના સંબંધિત જૂથમાંથી અલગ પડતો વિકલ્પ શોધો.</p>
+                        <a href="quiz9.html" class="inline-flex items-center justify-center w-full bg-amber-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors" data-lang-key="start-quiz">ક્વિઝ શરૂ કરો</a>
+                    </div>
+                    <!-- Card 8: Super Quiz -->
+                    <div class="content-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.8s;">
+                        <h3 id="link5-title" class="text-lg font-semibold text-amber-800 gujarati">પરિસ્થિતિ આધારિત ક્વિઝ</h3>
+                        <p id="link5-desc" class="text-sm text-slate-600 mt-2 mb-4 gujarati">પ્રતિકૂળ કે અનુકૂળ સંજોગોમાં, મારે શું કરવું? વ્યવહારુ પ્રશ્નોના જવાબ આપો.</p>
+                        <a href="superquiz.html" class="inline-flex items-center justify-center w-full bg-amber-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors" data-lang-key="start-quiz">ક્વિઝ શરૂ કરો</a>
+                    </div>
+                 </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 border-t pt-8">
+            <p id="footer-name" class="font-semibold text-slate-700 gujarati">મનીષ વી. શાહ</p>
+            <p id="footer-contact" class="text-slate-500 gujarati">વોટ્સએપ: 94299 26447 (વડોદરા)</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- DATA STORE FOR LANGUAGES ---
+        const translations = {
+            gu: {
+                "main-title": "સાચા સુખના ૧૬ સુવર્ણ નિયમો",
+                "main-subtitle": "આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા લખાયેલ '૧૬ ભાવના' પર આધારિત",
+                "video-title": "વિડિઓ અને પોડકાસ્ટ",
+                "vid1-title": "૧૬ ભાવના (ટૂંકમાં)",
+                "vid1-desc": "સાચા સુખના ૧૬ સુવર્ણ નિયમોની સંક્ષિપ્ત અને સુંદર રજૂઆત.",
+                "watch-video": "વિડિઓ જુઓ",
+                "vid2-title": "પોડકાસ્ટ: ૧૬ ભાવના",
+                "vid2-desc": "દરેક ભાવના ના ઊંડા રહસ્યોની સમજણ.",
+                "listen-podcast": "પોડકાસ્ટ સાંભળો",
+                "vid3-title": "16 Golden Rules of True Happiness",
+                "vid3-desc": "વ્યાપક પ્રેક્ષકો માટે ૧૬ ભાવનાની અંગ્રેજી સમજૂતી.",
+                "watch-video-en": "વિડિઓ જુઓ",
+                "interactive-title": "વાંચો અને જ્ઞાન ચકાસો",
+                "link1-title": "સંપૂર્ણ વિગતવાર માહિતી",
+                "link1-desc": "દરેક ભાવનાને ઊંડાણપૂર્વક સમજો. ગુજરાતી અને અંગ્રેજી બંને ભાષામાં ઉપલબ્ધ.",
+                "read-now": "હવે વાંચો",
+                "link2-title": "દ્રશ્ય પ્રસ્તુતિ (Infographics)",
+                "link2-desc": "રંગબેરંગી અને આકર્ષક ચિત્રો દ્વારા ૧૬ ભાવનાને સરળતાથી યાદ રાખો.",
+                "view-now": "હવે જુઓ",
+                "quiz-title": "જ્ઞાનવર્ધક ક્વિઝ",
+                "link3-title": "તમારા જ્ઞાનને ચકાસો",
+                "link3-desc": "૧૬ ભાવના પર આધારિત પ્રશ્નોના જવાબ આપીને તમારી સમજને વધુ મજબૂત બનાવો.",
+                "link4-title": "આમાંથી અલગ શું છે?",
+                "link4-desc": "તમારી તર્ક શક્તિનો ઉપયોગ કરીને દરેક ભાવના સંબંધિત જૂથમાંથી અલગ પડતો વિકલ્પ શોધો.",
+                "link5-title": "પરિસ્થિતિ આધારિત ક્વિઝ",
+                "link5-desc": "પ્રતિકૂળ કે અનુકૂળ સંજોગોમાં, મારે શું કરવું? વ્યવહારુ પ્રશ્નોના જવાબ આપો.",
+                "start-quiz": "ક્વિઝ શરૂ કરો",
+                "footer-name": "મનીષ વી. શાહ",
+                "footer-contact": "વોટ્સએપ: 94299 26447 (વડોદરા)",
+            },
+            en: {
+                "main-title": "16 Golden Rules of True Happiness",
+                "main-subtitle": "Based on the '16 Bhavna' written by Acharya Shri Hemchandrasuri",
+                "video-title": "Videos and Podcasts",
+                "vid1-title": "16 Bhavna (In Brief)",
+                "vid1-desc": "A concise and beautiful presentation of the 16 golden rules of true happiness.",
+                "watch-video": "Watch Video",
+                "vid2-title": "Podcast: 16 Bhavna",
+                "vid2-desc": "Understanding the deep secrets of each contemplation.",
+                "listen-podcast": "Listen to Podcast",
+                "vid3-title": "16 Golden Rules of True Happiness",
+                "vid3-desc": "An English explanation of the 16 contemplations for a wider audience.",
+                "watch-video-en": "Watch Video",
+                "interactive-title": "Read and Test Your Knowledge",
+                "link1-title": "Complete Detailed Information",
+                "link1-desc": "Understand each contemplation in depth. Available in both Gujarati and English.",
+                "read-now": "Read Now",
+                "link2-title": "Visual Presentation (Infographics)",
+                "link2-desc": "Easily remember the 16 Bhavna through colorful and attractive illustrations.",
+                "view-now": "View Now",
+                "quiz-title": "Knowledge-Enhancing Quizzes",
+                "link3-title": "Check Your Knowledge",
+                "link3-desc": "Strengthen your understanding by answering questions based on the 16 Bhavna.",
+                "link4-title": "Odd One Out",
+                "link4-desc": "Use your reasoning skills to find the option that doesn't belong in each group related to a Bhavna.",
+                "link5-title": "Situational Quiz",
+                "link5-desc": "In adverse or favorable circumstances, what should I do? Answer practical questions.",
+                "start-quiz": "Start Quiz",
+                "footer-name": "Manish V. Shah",
+                "footer-contact": "WhatsApp: 94299 26447 (Vadodara)",
+            }
+        };
+
+        // --- LANGUAGE SWITCHER LOGIC ---
+        const btnGu = document.getElementById('btn-gu');
+        const btnEn = document.getElementById('btn-en');
+        const allTextElements = {
+            'main-title': document.getElementById('main-title'),
+            'main-subtitle': document.getElementById('main-subtitle'),
+            'video-title': document.getElementById('video-title'),
+            'vid1-title': document.getElementById('vid1-title'),
+            'vid1-desc': document.getElementById('vid1-desc'),
+            'watch-video': document.querySelector('[data-lang-key="watch-video"]'),
+            'vid2-title': document.getElementById('vid2-title'),
+            'vid2-desc': document.getElementById('vid2-desc'),
+            'listen-podcast': document.querySelector('[data-lang-key="listen-podcast"]'),
+            'vid3-title': document.getElementById('vid3-title'),
+            'vid3-desc': document.getElementById('vid3-desc'),
+            'watch-video-en': document.querySelector('[data-lang-key="watch-video-en"]'),
+            'interactive-title': document.getElementById('interactive-title'),
+            'link1-title': document.getElementById('link1-title'),
+            'link1-desc': document.getElementById('link1-desc'),
+            'read-now': document.querySelector('[data-lang-key="read-now"]'),
+            'link2-title': document.getElementById('link2-title'),
+            'link2-desc': document.getElementById('link2-desc'),
+            'view-now': document.querySelector('[data-lang-key="view-now"]'),
+            'quiz-title': document.getElementById('quiz-title'),
+            'link3-title': document.getElementById('link3-title'),
+            'link3-desc': document.getElementById('link3-desc'),
+            'link4-title': document.getElementById('link4-title'),
+            'link4-desc': document.getElementById('link4-desc'),
+            'link5-title': document.getElementById('link5-title'),
+            'link5-desc': document.getElementById('link5-desc'),
+            'footer-name': document.getElementById('footer-name'),
+            'footer-contact': document.getElementById('footer-contact'),
+        };
+        
+        // Add all quiz buttons to the elements object
+        const quizButtons = document.querySelectorAll('[data-lang-key="start-quiz"]');
+        quizButtons.forEach((btn, index) => {
+            allTextElements[`start-quiz-${index}`] = btn;
+        });
+
+
+        function switchLanguage(lang) {
+            // Set active button style
+            btnGu.classList.toggle('active', lang === 'gu');
+            btnEn.classList.toggle('active', lang === 'en');
+
+            // Set page language attribute
+            document.documentElement.lang = lang;
+
+            // Translate all text elements
+            for (const key in allTextElements) {
+                if(allTextElements[key]) {
+                    // For quiz buttons, the key is generic 'start-quiz'
+                    let translationKey = key.startsWith('start-quiz') ? 'start-quiz' : key;
+                    allTextElements[key].textContent = translations[lang][translationKey];
+                }
+            }
+            
+            // Toggle 'gujarati' class for font switching
+            const elementsToToggleFont = document.querySelectorAll('.gujarati, h1, h2, h3, p, a, span');
+            elementsToToggleFont.forEach(el => {
+                // We only want to toggle the class on elements that are meant to be multilingual
+                const key = el.id || (el.dataset.langKey ? el.dataset.langKey.replace(/-/g, '_') : null);
+                 if (key && translations.gu[key.replace(/_\d*$/, '')]) {
+                    if (lang === 'gu') {
+                        el.classList.add('gujarati');
+                    } else {
+                        el.classList.remove('gujarati');
+                    }
+                }
+            });
+
+            // Special handling for elements that should always be one language or another
+             if (lang === 'gu') {
+                document.getElementById('vid3-title').classList.remove('gujarati');
+                document.getElementById('vid3-desc').classList.remove('gujarati');
+                document.querySelector('[data-lang-key="watch-video-en"]').classList.remove('gujarati');
+             } else {
+                 document.getElementById('vid3-title').textContent = translations.en['vid3-title'];
+                 document.getElementById('vid3-desc').textContent = translations.en['vid3-desc'];
+             }
+        }
+
+        btnGu.addEventListener('click', () => switchLanguage('gu'));
+        btnEn.addEventListener('click', () => switchLanguage('en'));
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage('gu'); // Default to Gujarati
+        });
+    </script>
+
+</body>
+</html>

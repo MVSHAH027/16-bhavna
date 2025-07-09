@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>૧૬ ભાવના ક્વિઝ (16 Bhavna Quiz)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Hind+Vadodara:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Hind Vadodara', sans-serif;
+        }
+        .gujarati-font {
+            font-family: 'Hind Vadodara', sans-serif;
+        }
+        .english-font {
+            font-family: 'Inter', sans-serif;
+        }
+        .option-btn {
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #e2e8f0;
+        }
+        .option-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .correct {
+            background-color: #dcfce7 !important; /* green-100 */
+            border-color: #22c55e !important; /* green-500 */
+            color: #15803d; /* green-700 */
+        }
+        .wrong {
+            background-color: #fee2e2 !important; /* red-100 */
+            border-color: #ef4444 !important; /* red-500 */
+            color: #b91c1c; /* red-700 */
+        }
+        .disabled {
+            pointer-events: none;
+            opacity: 0.9;
+        }
+        .bhavna-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="max-w-2xl mx-auto p-4 sm:p-6">
+        <!-- Header -->
+        <header class="text-center mb-6">
+            <h1 id="main-title" class="text-3xl font-bold text-blue-600 gujarati-font">૧૬ ભાવના</h1>
+            <p id="sub-title" class="text-md text-gray-500 mt-1 gujarati-font">આચાર્ય શ્રી હેમચન્દ્રસૂરિ રચિત</p>
+            <div class="mt-4 flex justify-center space-x-2">
+                <button id="lang-gu" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 gujarati-font">ગુજરાતી</button>
+                <button id="lang-en" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 english-font">English</button>
+            </div>
+        </header>
+
+        <!-- Quiz Container -->
+        <main id="quiz-container" class="space-y-6">
+            <!-- Questions will be dynamically inserted here -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-10 text-sm text-gray-500">
+            <p id="footer-text" class="gujarati-font">મનીષ વી. શાહ: વોટ્સએપ: 94299 26447: (વડોદરા)</p>
+        </footer>
+    </div>
+
+    <script>
+        const quizData = [
+            // 1. Anitya Bhavna
+            {
+                bhavna: { gu: "અનિત્ય ભાવના", en: "Anitya Bhavna" },
+                type: 'text',
+                question: { gu: "અનિત્ય ભાવના અનુસાર, આ જગતમાં જે કાંઈ પણ દેખાય છે તે કેવું છે?", en: "According to Anitya Bhavna, what is the nature of everything seen in this world?" },
+                options: [
+                    { gu: "શાશ્વત અને સ્થિર", en: "Eternal and stable" },
+                    { gu: "અનિત્ય અને નશ્વર", en: "Impermanent and perishable" },
+                    { gu: "માત્ર આંશિક રીતે નશ્વર", en: "Only partially perishable" },
+                    { gu: "આપણા વિચારો પર આધારિત", en: "Dependent on our thoughts" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "અનિત્ય ભાવના", en: "Anitya Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમારો મનપસંદ ફોન તૂટી જાય છે. અનિત્ય ભાવના મુજબ, તમારી સાચી પ્રતિક્રિયા શું હોવી જોઈએ?", en: "Your favorite phone breaks. According to Anitya Bhavna, what should be your true reaction?" },
+                options: [
+                    { gu: "ખૂબ જ દુઃખી થવું અને ગુસ્સો કરવો.", en: "Become very sad and angry." },
+                    { gu: "તરત જ નવો ફોન ખરીદવાની યોજના બનાવવી.", en: "Immediately plan to buy a new one." },
+                    { gu: "સમજવું કે ભૌતિક વસ્તુઓ નશ્વર છે અને શાંત રહેવું.", en: "Understand that material things are perishable and remain calm." },
+                    { gu: "જેણે ફોન તોડ્યો તેને દોષ આપવો.", en: "Blame the person who might have broken it." }
+                ],
+                answer: 2
+            },
+            // 2. Asharan Bhavna
+            {
+                bhavna: { gu: "અશરણ ભાવના", en: "Asharan Bhavna" },
+                type: 'text',
+                question: { gu: "અશરણ ભાવના મુજબ, જન્મ, જરા અને મરણથી કોણ બચાવી શકે છે?", en: "According to Asharan Bhavna, who can save us from birth, old age, and death?" },
+                options: [
+                    { gu: "શક્તિશાળી રાજાઓ", en: "Powerful kings" },
+                    { gu: "ધનવાન મિત્રો", en: "Wealthy friends" },
+                    { gu: "દેવો અને દેવેન્દ્રો", en: "Gods and celestial beings" },
+                    { gu: "જિનધર્મ", en: "Jain Dharma" }
+                ],
+                answer: 3
+            },
+            {
+                bhavna: { gu: "અશરણ ભાવના", en: "Asharan Bhavna" },
+                type: 'scenario',
+                question: { gu: "એક ડૉક્ટર પોતે ગંભીર બીમારીનો ભોગ બને છે. આ ઘટના કઈ ભાવનાની યાદ અપાવે છે?", en: "A doctor himself falls victim to a serious illness. This incident reminds us of which Bhavna?" },
+                options: [
+                    { gu: "અશરણ ભાવના (કોઈ સાચું શરણ નથી)", en: "Asharan Bhavna (no true refuge)" },
+                    { gu: "એકત્વ ભાવના (જીવ એકલો છે)", en: "Ekatva Bhavna (the soul is alone)" },
+                    { gu: "કરુણા ભાવના (દુઃખી પ્રત્યે દયા)", en: "Karuna Bhavna (compassion for the suffering)" },
+                    { gu: "મૈત્રી ભાવના (સૌ જીવો મિત્ર છે)", en: "Maitri Bhavna (friendship with all beings)" }
+                ],
+                answer: 0
+            },
+            // 3. Sansar Bhavna
+            {
+                bhavna: { gu: "સંસાર ભાવના", en: "Sansar Bhavna" },
+                type: 'text',
+                question: { gu: "સંસાર ભાવના મુજબ, જીવે સંસારમાં શું અનંતી વાર નથી ભોગવ્યું?", en: "According to Sansar Bhavna, what has the soul NOT experienced infinite times in the world?" },
+                options: [
+                    { gu: "દુઃખ", en: "Suffering" },
+                    { gu: "સુખ", en: "Happiness" },
+                    { gu: "સંપત્તિ", en: "Wealth" },
+                    { gu: "મોક્ષ", en: "Liberation (Moksha)" }
+                ],
+                answer: 3
+            },
+            {
+                bhavna: { gu: "સંસાર ભાવના", en: "Sansar Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે વારંવાર એક જ પ્રકારની ભૂલોનું પુનરાવર્તન કરો છો. આ સંસારના કયા સ્વરૂપને દર્શાવે છે?", en: "You find yourself repeating the same kind of mistakes over and over. This reflects which aspect of Sansar (the world-cycle)?" },
+                options: [
+                    { gu: "જન્મ-મરણનું અનંત ચક્ર", en: "The endless cycle of birth and death" },
+                    { gu: "સુખ-દુઃખની ક્ષણિકતા", en: "The fleeting nature of happiness and sorrow" },
+                    { gu: "સંબંધોની પરિવર્તનશીલતા", en: "The changing nature of relationships" },
+                    { gu: "આ બધું જ", en: "All of the above" }
+                ],
+                answer: 0
+            },
+            // 4. Ekatva Bhavna
+            {
+                bhavna: { gu: "એકત્વ ભાવના", en: "Ekatva Bhavna" },
+                type: 'text',
+                question: { gu: "એકત્વ ભાવના મુજબ, જીવની બધી તકલીફોનું મૂળ શું છે?", en: "According to Ekatva Bhavna, what is the root of all the soul's troubles?" },
+                options: [
+                    { gu: "એકલા રહેવું", en: "Being alone" },
+                    { gu: "ભીડને પોતાનો પરિવાર માની લેવો", en: "Considering the crowd as one's own family" },
+                    { gu: "ધનનો અભાવ", en: "Lack of wealth" },
+                    { gu: "શરીરની નબળાઈ", en: "Weakness of the body" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "એકત્વ ભાવના", en: "Ekatva Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે એક પ્રોજેક્ટમાં સફળ થાઓ છો અને બધી પ્રશંસા તમને મળે છે. એકત્વ ભાવના તમને શું યાદ અપાવશે?", en: "You succeed in a project and receive all the praise. What will Ekatva Bhavna remind you of?" },
+                options: [
+                    { gu: "તમારે તમારા કર્મોના ફળ એકલા જ ભોગવવાના છે.", en: "You alone have to bear the fruits of your karma." },
+                    { gu: "આ સફળતા ટીમ વર્કને કારણે છે.", en: "This success is due to teamwork." },
+                    { gu: "આવી સફળતા વારંવાર મળવી જોઈએ.", en: "Such success should be achieved repeatedly." },
+                    { gu: "તમારે આ સફળતાની ઉજવણી કરવી જોઈએ.", en: "You should celebrate this success." }
+                ],
+                answer: 0
+            },
+            // 5. Anyatva Bhavna
+            {
+                bhavna: { gu: "અન્યત્વ ભાવના", en: "Anyatva Bhavna" },
+                type: 'text',
+                question: { gu: "અન્યત્વ ભાવના શું શીખવે છે?", en: "What does Anyatva Bhavna teach?" },
+                options: [
+                    { gu: "શરીર અને આત્મા એક જ છે.", en: "The body and soul are one." },
+                    { gu: "બધા જીવો એકબીજા સાથે જોડાયેલા છે.", en: "All beings are connected to each other." },
+                    { gu: "શરીર અને આત્મા સંપૂર્ણપણે જુદા છે.", en: "The body and soul are completely separate." },
+                    { gu: "આપણે બીજા પર નિર્ભર છીએ.", en: "We are dependent on others." }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "અન્યત્વ ભાવના", en: "Anyatva Bhavna" },
+                type: 'scenario',
+                question: { gu: "કોઈ તમારી કારની પ્રશંસા કરે છે. અન્યત્વ ભાવના મુજબ, તમારો વિચાર શું હોવો જોઈએ?", en: "Someone praises your car. According to Anyatva Bhavna, what should be your thought?" },
+                options: [
+                    { gu: "ગર્વ અનુભવવો કારણ કે તે મારી પસંદગી છે.", en: "Feel proud because it's my choice." },
+                    { gu: "આ કાર મારાથી અલગ એક ભૌતિક વસ્તુ છે, હું તે નથી.", en: "This car is a material object separate from me; I am not the car." },
+                    { gu: "તેમને કહેવું કે તે ખૂબ મોંઘી છે.", en: "Tell them it is very expensive." },
+                    { gu: "આવી બીજી કાર ખરીદવાનું વિચારવું.", en: "Think about buying another such car." }
+                ],
+                answer: 1
+            },
+            // 6. Ashuchi Bhavna
+            {
+                bhavna: { gu: "અશુચિ ભાવના", en: "Ashuchi Bhavna" },
+                type: 'text',
+                question: { gu: "અશુચિ ભાવના મુજબ, દુનિયામાં સૌથી ગંદી વસ્તુ કઈ છે?", en: "According to Ashuchi Bhavna, what is the most impure thing in the world?" },
+                options: [
+                    { gu: "ગટર", en: "A sewer" },
+                    { gu: "કચરાનો ઢગલો", en: "A garbage heap" },
+                    { gu: "શરીર", en: "The body" },
+                    { gu: "પ્રદૂષિત નદી", en: "A polluted river" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "અશુચિ ભાવના", en: "Ashuchi Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે સૌંદર્ય પ્રસાધનો પર ઘણો સમય અને પૈસા ખર્ચો છો. અશુચિ ભાવના તમને શું વિચારવા પ્રેરે છે?", en: "You spend a lot of time and money on cosmetics. What does Ashuchi Bhavna inspire you to think?" },
+                options: [
+                    { gu: "આ જરૂરી છે કારણ કે દેખાવ મહત્વનો છે.", en: "This is necessary because appearance is important." },
+                    { gu: "શરીરની અશુદ્ધિને બાહ્ય વસ્તુઓથી છુપાવી શકાતી નથી.", en: "The impurity of the body cannot be hidden by external things." },
+                    { gu: "મારે વધુ સારા ઉત્પાદનોનો ઉપયોગ કરવો જોઈએ.", en: "I should use even better products." },
+                    { gu: "આ આત્મ-સંભાળનો એક ભાગ છે.", en: "This is a part of self-care." }
+                ],
+                answer: 1
+            },
+            // 7. Aasrav Bhavna
+            {
+                bhavna: { gu: "આશ્રવ ભાવના", en: "Aasrav Bhavna" },
+                type: 'text',
+                question: { gu: "આત્મામાં કર્મોની ઘુસણખોરીને શું કહેવાય છે?", en: "What is the influx of karmas into the soul called?" },
+                options: [
+                    { gu: "સંવર", en: "Samvar" },
+                    { gu: "નિર્જરા", en: "Nirjara" },
+                    { gu: "આશ્રવ", en: "Aasrav" },
+                    { gu: "બંધ", en: "Bandh" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "આશ્રવ ભાવના", en: "Aasrav Bhavna" },
+                type: 'scenario',
+                question: { gu: "જ્યારે તમે કોઈની ઈર્ષ્યા કરો છો, ત્યારે તમારા મનમાં કયા પ્રકારના કર્મનો આશ્રવ (આગમન) થાય છે?", en: "When you feel jealous of someone, what kind of karma's Aasrav (influx) occurs in your mind?" },
+                options: [
+                    { gu: "શુભ કર્મ", en: "Auspicious karma (Shubha karma)" },
+                    { gu: "અશુભ કર્મ", en: "Inauspicious karma (Ashubha karma)" },
+                    { gu: "કોઈ કર્મ નહીં", en: "No karma" },
+                    { gu: "જ્ઞાનાવરણીય કર્મ", en: "Knowledge-obscuring karma (Jnanavarniya)" }
+                ],
+                answer: 1
+            },
+            // 8. Samvar Bhavna
+            {
+                bhavna: { gu: "સંવર ભાવના", en: "Samvar Bhavna" },
+                type: 'text',
+                question: { gu: "ક્રોધના આશ્રવને રોકવા માટે કયો ઉપાય બતાવ્યો છે?", en: "What remedy is prescribed to stop the influx (Aasrav) of anger?" },
+                options: [
+                    { gu: "અભિમાન", en: "Arrogance" },
+                    { gu: "ક્ષમા", en: "Forgiveness" },
+                    { gu: "લોભ", en: "Greed" },
+                    { gu: "સરળતા", en: "Simplicity" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "સંવર ભાવના", en: "Samvar Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે બિનજરૂરી બોલવાનું ટાળવા માટે મૌન પાળવાનું નક્કી કરો છો. આ કઈ ભાવનાનો વ્યવહારુ અમલ છે?", en: "You decide to observe silence to avoid unnecessary talk. This is a practical application of which Bhavna?" },
+                options: [
+                    { gu: "નિર્જરા ભાવના", en: "Nirjara Bhavna" },
+                    { gu: "સંવર ભાવના (વચન ગુપ્તિ દ્વારા)", en: "Samvar Bhavna (through control of speech)" },
+                    { gu: "એકત્વ ભાવના", en: "Ekatva Bhavna" },
+                    { gu: "અનિત્ય ભાવના", en: "Anitya Bhavna" }
+                ],
+                answer: 1
+            },
+            // 9. Nirjara Bhavna
+            {
+                bhavna: { gu: "નિર્જરા ભાવના", en: "Nirjara Bhavna" },
+                type: 'text',
+                question: { gu: "તપ દ્વારા સામી છાતીએ કર્મોને ખપાવવા એ કયા પ્રકારની નિર્જરા છે?", en: "Shedding karmas voluntarily through penance is what type of Nirjara?" },
+                options: [
+                    { gu: "અકામ નિર્જરા", en: "Akam Nirjara (involuntary shedding)" },
+                    { gu: "સકામ નિર્જરા", en: "Sakam Nirjara (voluntary shedding)" },
+                    { gu: "ભાવ નિર્જરા", en: "Bhav Nirjara" },
+                    { gu: "દ્રવ્ય નિર્જરા", en: "Dravya Nirjara" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "નિર્જરા ભાવના", en: "Nirjara Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે બીમાર પડો છો અને પીડા સહન કરવી પડે છે, જેનાથી તમારા કર્મો ખરી જાય છે. આ કઈ નિર્જરાનું ઉદાહરણ છે?", en: "You fall ill and have to endure pain, which causes your karmas to shed. This is an example of which Nirjara?" },
+                options: [
+                    { gu: "સકામ નિર્જરા", en: "Sakam Nirjara" },
+                    { gu: "અકામ નિર્જરા", en: "Akam Nirjara" },
+                    { gu: "ઉપચાર નિર્જરા", en: "Upchar Nirjara" },
+                    { gu: "આમાંથી કોઈ નહીં", en: "None of these" }
+                ],
+                answer: 1
+            },
+            // 10. Dharma Swakhyatata Bhavna
+            {
+                bhavna: { gu: "ધર્મ સ્વાખ્યાતતા ભાવના", en: "Dharma Swakhyatata Bhavna" },
+                type: 'text',
+                question: { gu: "જિનધર્મના દસ લક્ષણોમાં નીચેનામાંથી કોનો સમાવેશ થતો નથી?", en: "Which of the following is NOT included in the ten characteristics of Jain Dharma?" },
+                options: [
+                    { gu: "ક્ષમા", en: "Forgiveness" },
+                    { gu: "તપ", en: "Penance" },
+                    { gu: "બ્રહ્મચર્ય", en: "Celibacy" },
+                    { gu: "કષાય", en: "Passions (Kashaya)" }
+                ],
+                answer: 3
+            },
+            {
+                bhavna: { gu: "ધર્મ સ્વાખ્યાતતા ભાવના", en: "Dharma Swakhyatata Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે કોઈને નિઃસ્વાર્થપણે મદદ કરતા જુઓ છો. આ જોઈને તમને ધર્મના કયા ગુણનું સ્મરણ થાય છે?", en: "You see someone helping others selflessly. Seeing this reminds you of which quality of Dharma?" },
+                options: [
+                    { gu: "સત્ય", en: "Truth (Satya)" },
+                    { gu: "સંયમ", en: "Restraint (Sanyam)" },
+                    { gu: "ક્ષમા", en: "Forgiveness (Kshama)" },
+                    { gu: "આ બધા ગુણો ધર્મનો ભાગ છે", en: "All these qualities are part of Dharma" }
+                ],
+                answer: 3
+            },
+            // 11. Lokasvabhava Bhavna
+            {
+                bhavna: { gu: "લોકસ્વભાવ ભાવના", en: "Lokasvabhava Bhavna" },
+                type: 'text',
+                question: { gu: "લોકસ્વભાવ ભાવના અનુસાર, વિશ્વનો આકાર કોના જેવો છે?", en: "According to Lokasvabhava Bhavna, what is the shape of the universe like?" },
+                options: [
+                    { gu: "ગોળાકાર", en: "Spherical" },
+                    { gu: "ચોરસ", en: "Square" },
+                    { gu: "કમર પર હાથ રાખીને ઉભેલો માનવ", en: "A man standing with hands on his waist" },
+                    { gu: "અનંત અને આકારહીન", en: "Infinite and formless" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "લોકસ્વભાવ ભાવના", en: "Lokasvabhava Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે સમાચારમાં એક તરફ લગ્નની ઉજવણી અને બીજી તરફ યુદ્ધની તબાહી જુઓ છો. આ દ્રશ્ય કઈ ભાવનાને પુષ્ટિ આપે છે?", en: "In the news, you see a wedding celebration on one side and the devastation of war on the other. This sight confirms which Bhavna?" },
+                options: [
+                    { gu: "લોકસ્વભાવ ભાવના", en: "Lokasvabhava Bhavna" },
+                    { gu: "કરુણા ભાવના", en: "Karuna Bhavna" },
+                    { gu: "અનિત્ય ભાવના", en: "Anitya Bhavna" },
+                    { gu: "અશરણ ભાવના", en: "Asharan Bhavna" }
+                ],
+                answer: 0
+            },
+            // 12. Bodhidurlabh Bhavna
+            {
+                bhavna: { gu: "બોધિદુર્લભ ભાવના", en: "Bodhidurlabh Bhavna" },
+                type: 'text',
+                question: { gu: "બધી દુર્લભ વસ્તુઓ મળ્યા પછી પણ, જીવ માટે સૌથી દુર્લભ શું છે?", en: "Even after obtaining all rare things, what is the most difficult thing for a soul to attain?" },
+                options: [
+                    { gu: "માનવભવ", en: "Human birth" },
+                    { gu: "ઉચ્ચ કુળ", en: "A high-status family" },
+                    { gu: "બોધિલાભ (સાચું જ્ઞાન)", en: "Bodhilabh (attainment of right understanding)" },
+                    { gu: "પૂરતું આયુષ્ય", en: "A long lifespan" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "બોધિદુર્લભ ભાવના", en: "Bodhidurlabh Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમને ધર્મ વિશે શીખવાની તક મળે છે, પરંતુ તમે તેને 'પછી કરીશ' કહીને ટાળી દો છો. બોધિદુર્લભ ભાવના તમને શું ચેતવણી આપે છે?", en: "You get an opportunity to learn about Dharma, but you postpone it saying 'I'll do it later'. What warning does Bodhidurlabh Bhavna give you?" },
+                options: [
+                    { gu: "આવી તક ફરીથી મળવી ખૂબ જ મુશ્કેલ છે.", en: "Such an opportunity is very difficult to get again." },
+                    { gu: "તમે ગમે ત્યારે શીખી શકો છો.", en: "You can learn anytime you want." },
+                    { gu: "શીખવા કરતાં કમાવવું વધુ મહત્વનું છે.", en: "Earning is more important than learning." },
+                    { gu: "આ તક ફક્ત ભાગ્યશાળી લોકો માટે છે.", en: "This opportunity is only for the lucky ones." }
+                ],
+                answer: 0
+            },
+             // 13. Maitri Bhavna
+            {
+                bhavna: { gu: "મૈત્રી ભાવના", en: "Maitri Bhavna" },
+                type: 'text',
+                question: { gu: "મૈત્રી ભાવનાનો સાર શું છે?", en: "What is the essence of Maitri Bhavna?" },
+                options: [
+                    { gu: "ફક્ત મિત્રોને મદદ કરવી.", en: "Helping only friends." },
+                    { gu: "બધા જીવો મોક્ષ પામો તેવી ભાવના.", en: "The feeling that all beings may attain liberation." },
+                    { gu: "દુશ્મનોને સજા આપવી.", en: "Punishing enemies." },
+                    { gu: "પોતાના પરિવારનું ભલું કરવું.", en: "Doing good for one's own family." }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "મૈત્રી ભાવના", en: "Maitri Bhavna" },
+                type: 'scenario',
+                question: { gu: "કોઈ તમારી સાથે ખરાબ વર્તન કરે છે. મૈત્રી ભાવના મુજબ, તમારો પ્રતિભાવ કેવો હોવો જોઈએ?", en: "Someone behaves badly with you. According to Maitri Bhavna, what should be your response?" },
+                options: [
+                    { gu: "બદલો લેવો.", en: "Take revenge." },
+                    { gu: "તેમના માટે પણ શુભ ભાવના રાખવી કે તેઓ સાચા માર્ગે આવે.", en: "Maintain good wishes for them too, that they may find the right path." },
+                    { gu: "તેમની અવગણના કરવી.", en: "Ignore them." },
+                    { gu: "તેમની ફરિયાદ કરવી.", en: "Complain about them." }
+                ],
+                answer: 1
+            },
+            // 14. Pramod Bhavna
+            {
+                bhavna: { gu: "પ્રમોદ ભાવના", en: "Pramod Bhavna" },
+                type: 'text',
+                question: { gu: "ગુણીજનોના ગુણોને જોઈને આનંદિત થવું એ કઈ ભાવના છે?", en: "Feeling joyful upon seeing the virtues of virtuous people is which Bhavna?" },
+                options: [
+                    { gu: "કરુણા ભાવના", en: "Karuna Bhavna" },
+                    { gu: "મૈત્રી ભાવના", en: "Maitri Bhavna" },
+                    { gu: "પ્રમોદ ભાવના", en: "Pramod Bhavna" },
+                    { gu: "માધ્યસ્થ્ય ભાવના", en: "Madhyasthya Bhavna" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "પ્રમોદ ભાવના", en: "Pramod Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમારા સહકર્મીને પ્રમોશન મળે છે. પ્રમોદ ભાવના મુજબ, તમારે શું કરવું જોઈએ?", en: "Your colleague gets a promotion. According to Pramod Bhavna, what should you do?" },
+                options: [
+                    { gu: "ઈર્ષ્યા કરવી અને તેમની ભૂલો શોધવી.", en: "Feel jealous and find their faults." },
+                    { gu: "તેમના ગુણો અને મહેનતની પ્રશંસા કરવી અને આનંદ વ્યક્ત કરવો.", en: "Appreciate their qualities and hard work, and express joy." },
+                    { gu: "ઉદાસીન રહેવું જાણે કંઈ થયું જ નથી.", en: "Remain indifferent as if nothing happened." },
+                    { gu: "પોતાના માટે ચિંતા કરવી.", en: "Worry about yourself." }
+                ],
+                answer: 1
+            },
+            // 15. Karuna Bhavna
+            {
+                bhavna: { gu: "કરુણા ભાવના", en: "Karuna Bhavna" },
+                type: 'text',
+                question: { gu: "કરુણા ભાવના કોના પ્રત્યે રાખવાની વાત કરે છે?", en: "Towards whom does Karuna Bhavna advocate having compassion?" },
+                options: [
+                    { gu: "ફક્ત ગુણવાન લોકો પ્રત્યે", en: "Only towards virtuous people" },
+                    { gu: "ફક્ત મનુષ્યો પ્રત્યે", en: "Only towards humans" },
+                    { gu: "દીન, દુઃખી અને પાપી જીવો પ્રત્યે", en: "Towards the poor, suffering, and sinful beings" },
+                    { gu: "ફક્ત પોતાના સ્વજનો પ્રત્યે", en: "Only towards one's own relatives" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "કરુણા ભાવના", en: "Karuna Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે રસ્તા પર એક ઘાયલ પક્ષી જુઓ છો. કરુણા ભાવના તમને શું કરવા પ્રેરે છે?", en: "You see an injured bird on the road. What does Karuna Bhavna inspire you to do?" },
+                options: [
+                    { gu: "તેને અવગણીને ચાલ્યા જવું.", en: "Ignore it and walk away." },
+                    { gu: "તેની પીડા અનુભવીને તેને મદદ કરવાનો પ્રયાસ કરવો.", en: "Feel its pain and try to help it." },
+                    { gu: "કોઈ બીજા મદદ કરશે તેમ વિચારવું.", en: "Think that someone else will help." },
+                    { gu: "તેનો ફોટો પાડીને સોશિયલ મીડિયા પર પોસ્ટ કરવો.", en: "Take its photo and post it on social media." }
+                ],
+                answer: 1
+            },
+            // 16. Madhyasthya Bhavna
+            {
+                bhavna: { gu: "માધ્યસ્થ્ય ભાવના", en: "Madhyasthya Bhavna" },
+                type: 'text',
+                question: { gu: "જે જીવો સુધારવા માટે તૈયાર નથી, તેમના પ્રત્યે કઈ ભાવના રાખવી જોઈએ?", en: "What feeling should one have towards beings who are not ready to improve?" },
+                options: [
+                    { gu: "ક્રોધ", en: "Anger" },
+                    { gu: "ઉપેક્ષાભાવ (માધ્યસ્થ્ય)", en: "A sense of neutrality (Madhyasthya)" },
+                    { gu: "ભય", en: "Fear" },
+                    { gu: "દ્વેષ", en: "Hatred" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "માધ્યસ્થ્ય ભાવના", en: "Madhyasthya Bhavna" },
+                type: 'scenario',
+                question: { gu: "કોઈ વ્યક્તિ સતત તમારી માન્યતાઓનું અપમાન કરે છે અને સમજાવવા છતાં સમજતો નથી. માધ્યસ્થ્ય ભાવના મુજબ, શ્રેષ્ઠ ઉપાય શું છે?", en: "A person constantly insults your beliefs and doesn't understand despite explanations. According to Madhyasthya Bhavna, what is the best approach?" },
+                options: [
+                    { gu: "તેમની સાથે ઉગ્ર દલીલ કરવી.", en: "Argue fiercely with them." },
+                    { gu: "તેમનું ભલું થાય તેવી ભાવના રાખી, માનસિક રીતે તેમનાથી અલિપ્ત રહેવું.", en: "Wishing them well, but remaining mentally detached from them." },
+                    { gu: "તેમનો જાહેરમાં વિરોધ કરવો.", en: "Oppose them publicly." },
+                    { gu: "તેમના વિશે બીજાને ફરિયાદ કરવી.", en: "Complain about them to others." }
+                ],
+                answer: 1
+            },
+            // Additional mixed questions
+            {
+                bhavna: { gu: "અનિત્ય ભાવના", en: "Anitya Bhavna" },
+                type: 'text',
+                question: { gu: "પાઠમાં કઈ વસ્તુને 'પરપોટો' સાથે સરખાવવામાં આવી છે?", en: "In the text, what has been compared to a 'bubble'?" },
+                options: [
+                    { gu: "આત્મા", en: "The soul" },
+                    { gu: "જગતમાં દેખાતી બધી વસ્તુઓ", en: "All things seen in the world" },
+                    { gu: "ધર્મ", en: "Dharma" },
+                    { gu: "મોક્ષ", en: "Liberation" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "અશરણ ભાવના", en: "Asharan Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે શેરબજારમાં મોટું નુકસાન કરો છો અને લાગે છે કે બધું ખતમ થઈ ગયું. અશરણ ભાવના તમને શું યાદ કરાવશે?", en: "You suffer a big loss in the stock market and feel like everything is over. What will Asharan Bhavna remind you of?" },
+                options: [
+                    { gu: "પૈસા જ સાચું શરણ છે.", en: "Money is the only true refuge." },
+                    { gu: "સાચું શરણ ધર્મ છે, ભૌતિક સંપત્તિ નહીં.", en: "The true refuge is Dharma, not material wealth." },
+                    { gu: "તમારે વધુ સારા સલાહકારની જરૂર છે.", en: "You need a better advisor." },
+                    { gu: "તમારું નસીબ ખરાબ છે.", en: "Your luck is bad." }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "સંસાર ભાવના", en: "Sansar Bhavna" },
+                type: 'text',
+                question: { gu: "સંસાર ભાવના મુજબ, સર્વ જીવો સાથે આપણો કેવો સંબંધ અનેકવાર થયો છે?", en: "According to Sansar Bhavna, what kind of relationship have we had with all beings multiple times?" },
+                options: [
+                    { gu: "ફક્ત મિત્રતાનો", en: "Only of friendship" },
+                    { gu: "ફક્ત દુશ્મનીનો", en: "Only of enmity" },
+                    { gu: "વ્હાલા અને ખૂની બંનેનો", en: "Both of loved ones and murderers" },
+                    { gu: "કોઈ સંબંધ નથી", en: "No relationship" }
+                ],
+                answer: 2
+            },
+            {
+                bhavna: { gu: "એકત્વ ભાવના", en: "Ekatva Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમારા પરિવારના સભ્યો તમારી સલાહ નથી માનતા. એકત્વ ભાવના મુજબ તમારે શું સમજવું જોઈએ?", en: "Your family members do not follow your advice. According to Ekatva Bhavna, what should you understand?" },
+                options: [
+                    { gu: "દરેક જીવ પોતાના કર્મો મુજબ ચાલે છે, કોઈ કોઈનું નથી.", en: "Every soul acts according to its own karma; no one belongs to anyone." },
+                    { gu: "તમારે તેમને સમજાવવાનો વધુ પ્રયાસ કરવો જોઈએ.", en: "You should try harder to convince them." },
+                    { gu: "તમારે તેમના પર ગુસ્સે થવું જોઈએ.", en: "You should be angry with them." },
+                    { gu: "તમારે પરિવારથી દૂર થઈ જવું જોઈએ.", en: "You should move away from the family." }
+                ],
+                answer: 0
+            },
+            {
+                bhavna: { gu: "અન્યત્વ ભાવના", en: "Anyatva Bhavna" },
+                type: 'text',
+                question: { gu: "આત્મા અને શરીર વચ્ચેનો મુખ્ય તફાવત શું છે?", en: "What is the main difference between the soul and the body?" },
+                options: [
+                    { gu: "આત્મા ચેતન છે, શરીર જડ છે.", en: "The soul is conscious, the body is inert." },
+                    { gu: "આત્મા અદ્રશ્ય છે, શરીર દ્રશ્ય છે.", en: "The soul is invisible, the body is visible." },
+                    { gu: "બંને નાશવંત છે.", en: "Both are perishable." },
+                    { gu: "A અને B બંને", en: "Both A and B" }
+                ],
+                answer: 3
+            },
+            {
+                bhavna: { gu: "આશ્રવ ભાવના", en: "Aasrav Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે કોઈ જરૂરિયાતમંદને દાન આપો છો. આ ક્રિયાથી કેવા કર્મનો આશ્રવ થાય છે?", en: "You donate to someone in need. What kind of karma's influx results from this action?" },
+                options: [
+                    { gu: "અશુભ કર્મ", en: "Inauspicious karma" },
+                    { gu: "શુભ કર્મ (પુણ્ય)", en: "Auspicious karma (Punya)" },
+                    { gu: "કોઈ કર્મ નહીં", en: "No karma" },
+                    { gu: "મિશ્ર કર્મ", en: "Mixed karma" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "નિર્જરા ભાવના", en: "Nirjara Bhavna" },
+                type: 'text',
+                question: { gu: "સ્વાધ્યાય અને ધ્યાન કયા પ્રકારના તપ છે?", en: "What type of penance are स्वाध्याय (self-study) and ध्यान (meditation)?" },
+                options: [
+                    { gu: "બાહ્ય તપ", en: "External penance" },
+                    { gu: "આંતર તપ", en: "Internal penance" },
+                    { gu: "શારીરિક તપ", en: "Physical penance" },
+                    { gu: "માનસિક તપ", en: "Mental penance" }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "બોધિદુર્લભ ભાવના", en: "Bodhidurlabh Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે એક એવા દેશમાં જન્મ્યા છો જ્યાં ધર્મનું પાલન કરવું સરળ છે. બોધિદુર્લભ ભાવના મુજબ આ શું સૂચવે છે?", en: "You are born in a country where it is easy to practice Dharma. According to Bodhidurlabh Bhavna, what does this indicate?" },
+                options: [
+                    { gu: "આ એક સામાન્ય ઘટના છે.", en: "This is a common occurrence." },
+                    { gu: "આ અનેક ભવોના પુણ્યનું ફળ છે.", en: "This is the fruit of meritorious deeds from many past lives." },
+                    { gu: "આનો કોઈ ખાસ અર્થ નથી.", en: "This has no special meaning." },
+                    { gu: "આનાથી જીવન વધુ મુશ્કેલ બને છે.", en: "This makes life more difficult." }
+                ],
+                answer: 1
+            },
+            {
+                bhavna: { gu: "પ્રમોદ ભાવના", en: "Pramod Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે કોઈ તપસ્વીના તપ વિશે સાંભળો છો. પ્રમોદ ભાવના મુજબ, તમારા મનમાં કેવો ભાવ આવવો જોઈએ?", en: "You hear about the penance of an ascetic. According to Pramod Bhavna, what feeling should arise in your mind?" },
+                options: [
+                    { gu: "આ બધું કરવું ખૂબ મુશ્કેલ છે.", en: "It is very difficult to do all this." },
+                    { gu: "તેમના તપની અનુમોદના અને આનંદનો ભાવ.", en: "A feeling of appreciation and joy for their penance." },
+                    { gu: "તેઓ શા માટે આવું કરે છે તેવો પ્રશ્ન.", en: "A question as to why they are doing this." },
+                    { gu: "ઉદાસીનતાનો ભાવ.", en: "A feeling of indifference." }
+                ],
+                answer: 1
+            },
+             {
+                bhavna: { gu: "કરુણા ભાવના", en: "Karuna Bhavna" },
+                type: 'scenario',
+                question: { gu: "તમે કોઈને આર્થિક તંગીમાં જુઓ છો. કરુણા ભાવના તમને શું કરવા માટે પ્રેરણા આપશે?", en: "You see someone in financial distress. What will Karuna Bhavna inspire you to do?" },
+                options: [
+                    { gu: "તેમના કર્મોનું ફળ છે એમ વિચારીને અવગણના કરવી.", en: "Ignore them, thinking it's the fruit of their karma." },
+                    { gu: "તેમના દુઃખને દૂર કરવા યથાશક્તિ મદદ કરવી.", en: "Help them according to your ability to alleviate their suffering." },
+                    { gu: "તેમને ફક્ત સાંત્વન આપવું.", en: "Just offer them sympathy." },
+                    { gu: "તેમનાથી દૂર રહેવું.", en: "Stay away from them." }
+                ],
+                answer: 1
+            },
+             {
+                bhavna: { gu: "માધ્યસ્થ્ય ભાવના", en: "Madhyasthya Bhavna" },
+                type: 'text',
+                question: { gu: "ભગવાન પણ કોને સુધારવા માટે અસમર્થ હતા?", en: "Whom was even the Lord unable to reform?" },
+                options: [
+                    { gu: "ગૌતમ સ્વામી", en: "Gautam Swami" },
+                    { gu: "સંગમ અને જમાલિ", en: "Sangam and Jamali" },
+                    { gu: "શ્રેણિક રાજા", en: "King Shrenik" },
+                    { gu: "આનંદ શ્રાવક", en: "Anand Shravak" }
+                ],
+                answer: 1
+            }
+        ];
+
+        // Global state
+        let currentLanguage = 'gu';
+
+        // DOM Elements
+        const quizContainer = document.getElementById('quiz-container');
+        const mainTitle = document.getElementById('main-title');
+        const subTitle = document.getElementById('sub-title');
+        const footerText = document.getElementById('footer-text');
+        const guBtn = document.getElementById('lang-gu');
+        const enBtn = document.getElementById('lang-en');
+
+        // Shuffle function (Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        
+        function handleAnswer(question, selectedOptionIndex, optionsContainer) {
+            // Disable all buttons in this question card
+            optionsContainer.classList.add('disabled');
+            
+            const buttons = optionsContainer.getElementsByTagName('button');
+            const selectedButton = buttons[selectedOptionIndex];
+            
+            if (selectedOptionIndex === question.answer) {
+                selectedButton.classList.add('correct');
+            } else {
+                selectedButton.classList.add('wrong');
+                buttons[question.answer].classList.add('correct');
+            }
+        }
+
+        function renderQuiz() {
+            quizContainer.innerHTML = ''; // Clear previous questions
+            
+            // Set UI text based on language
+            if (currentLanguage === 'gu') {
+                mainTitle.textContent = '૧૬ ભાવના';
+                mainTitle.className = 'text-3xl font-bold text-blue-600 gujarati-font';
+                subTitle.textContent = 'આચાર્ય શ્રી હેમચન્દ્રસૂરિ રચિત';
+                subTitle.className = 'text-md text-gray-500 mt-1 gujarati-font';
+                footerText.textContent = 'મનીષ વી. શાહ: વોટ્સએપ: 94299 26447: (વડોદરા)';
+                footerText.className = 'text-center mt-10 text-sm text-gray-500 gujarati-font';
+                guBtn.classList.add('bg-blue-500', 'text-white');
+                guBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                enBtn.classList.add('bg-gray-200', 'text-gray-700');
+                enBtn.classList.remove('bg-blue-500', 'text-white');
+
+            } else {
+                mainTitle.textContent = '16 Bhavna';
+                mainTitle.className = 'text-3xl font-bold text-blue-600 english-font';
+                subTitle.textContent = 'By Acharya Shri Hemchandrasuri';
+                subTitle.className = 'text-md text-gray-500 mt-1 english-font';
+                footerText.textContent = 'Manish V. Shah: WhatsApp: 94299 26447: (Vadodara)';
+                footerText.className = 'text-center mt-10 text-sm text-gray-500 english-font';
+                enBtn.classList.add('bg-blue-500', 'text-white');
+                enBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                guBtn.classList.add('bg-gray-200', 'text-gray-700');
+                guBtn.classList.remove('bg-blue-500', 'text-white');
+            }
+
+            quizData.forEach((q, index) => {
+                const questionCard = document.createElement('div');
+                questionCard.className = 'bg-white p-5 rounded-lg shadow-md border border-gray-200';
+
+                const questionText = document.createElement('p');
+                questionText.className = `text-lg font-semibold mb-4 ${currentLanguage === 'gu' ? 'gujarati-font' : 'english-font'}`;
+                questionText.textContent = `${index + 1}. ${q.question[currentLanguage]}`;
+
+                const bhavnaTag = document.createElement('span');
+                bhavnaTag.textContent = q.bhavna[currentLanguage];
+                bhavnaTag.className = `bhavna-tag bg-blue-100 text-blue-800 ${currentLanguage === 'gu' ? 'gujarati-font' : 'english-font'}`;
+
+                const optionsContainer = document.createElement('div');
+                optionsContainer.className = 'space-y-3';
+
+                q.options.forEach((option, optionIndex) => {
+                    const optionBtn = document.createElement('button');
+                    optionBtn.className = `w-full text-left p-3 rounded-lg option-btn bg-gray-50 hover:bg-gray-100 ${currentLanguage === 'gu' ? 'gujarati-font' : 'english-font'}`;
+                    optionBtn.textContent = option[currentLanguage];
+                    optionBtn.onclick = () => handleAnswer(q, optionIndex, optionsContainer);
+                    optionsContainer.appendChild(optionBtn);
+                });
+
+                questionCard.appendChild(questionText);
+                questionCard.appendChild(optionsContainer);
+                questionCard.appendChild(bhavnaTag);
+                quizContainer.appendChild(questionCard);
+            });
+        }
+
+        // Event Listeners for language switching
+        guBtn.addEventListener('click', () => {
+            currentLanguage = 'gu';
+            renderQuiz();
+        });
+
+        enBtn.addEventListener('click', () => {
+            currentLanguage = 'en';
+            renderQuiz();
+        });
+
+        // Initial setup
+        window.onload = () => {
+            shuffleArray(quizData);
+            renderQuiz();
+        };
+    </script>
+
+</body>
+</html>

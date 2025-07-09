@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>૧૬ ભાવના: મોક્ષ-માર્ગ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Hind+Vadodara:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .guj-font {
+            font-family: 'Hind Vadodara', sans-serif;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid;
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-lang {
+            transition: all 0.2s ease;
+        }
+        .btn-lang.active {
+            background-color: #1d4ed8; /* Darker blue for active */
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-choice {
+            transition: all 0.3s ease;
+            border: 1px solid #d1d5db;
+        }
+        .btn-choice:hover {
+            transform: scale(1.02);
+        }
+        .correct {
+            background-color: #10b981 !important; /* Emerald 500 */
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .incorrect {
+            background-color: #ef4444 !important; /* Red 500 */
+            color: white !important;
+            border-color: #dc2626 !important;
+        }
+        .explanation {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding: 0;
+        }
+        .explanation.show {
+            max-height: 500px; /* Large enough for content */
+            padding: 1rem 0 0 0;
+        }
+        /* Colors for the border based on Jain flag colors */
+        .card-1 { border-color: #ef4444; } /* Red */
+        .card-2 { border-color: #f59e0b; } /* Amber */
+        .card-3 { border-color: #e5e7eb; } /* Gray - for White */
+        .card-4 { border-color: #10b981; } /* Emerald */
+        .card-5 { border-color: #3b82f6; } /* Blue */
+        .card-6 { border-color: #ef4444; }
+        .card-7 { border-color: #f59e0b; }
+        .card-8 { border-color: #e5e7eb; }
+        .card-9 { border-color: #10b981; }
+        .card-10 { border-color: #3b82f6; }
+        .card-11 { border-color: #ef4444; }
+        .card-12 { border-color: #f59e0b; }
+        .card-13 { border-color: #e5e7eb; }
+        .card-14 { border-color: #10b981; }
+        .card-15 { border-color: #3b82f6; }
+        .card-16 { border-color: #ef4444; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="container mx-auto max-w-2xl p-4 sm:p-6">
+        
+        <!-- Header -->
+        <header class="text-center mb-6">
+            <h1 id="main-title" class="text-3xl sm:text-4xl font-bold text-gray-800 guj-font">૧૬ ભાવના: મોક્ષ-માર્ગ</h1>
+            <p id="main-subtitle" class="text-gray-600 mt-2">આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા પ્રેરિત</p>
+        </header>
+
+        <!-- Language Switcher -->
+        <div class="flex justify-center mb-8 bg-white p-2 rounded-full shadow-sm w-fit mx-auto">
+            <button id="btn-guj" class="btn-lang guj-font font-semibold py-2 px-6 rounded-full text-gray-700 active">ગુજરાતી</button>
+            <button id="btn-eng" class="btn-lang font-semibold py-2 px-6 rounded-full text-gray-700">English</button>
+        </div>
+
+        <!-- Game Container -->
+        <main id="game-container">
+            <!-- Bhavana cards will be dynamically inserted here -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-sm text-gray-500 guj-font">
+            <p>મનીષ વી. શાહ (વડોદરા)</p>
+            <p>વોટ્સએપ: 94299 26447</p>
+        </footer>
+    </div>
+
+    <script>
+        const gameContainer = document.getElementById('game-container');
+        const mainTitle = document.getElementById('main-title');
+        const mainSubtitle = document.getElementById('main-subtitle');
+        const btnGuj = document.getElementById('btn-guj');
+        const btnEng = document.getElementById('btn-eng');
+
+        const gameData = {
+            guj: {
+                title: "૧૬ ભાવના: મોક્ષ-માર્ગ",
+                subtitle: "આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા પ્રેરિત",
+                bhavanas: [
+                    {
+                        title: "૧. અનિત્ય ભાવના",
+                        description: "આ જગતમાં જે કાંઈ પણ દેખાય છે તે બધું જ અનિત્ય છે. ઘર, શરીર, સ્વજન, સંપત્તિ, બધું જ નશ્વર છે. શા માટે એના પર રાગ કરવો? જે નાશવંત છે એના રાગથી તું નાશ પામતો રહીશ. જે શાશ્વત છે, એના રાગથી તું શાશ્વત બની જઈશ.",
+                        question: "તમને ખૂબ જ ગમતી ભેટ મળે છે. તમારો સાચો વિચાર શું હોવો જોઈએ?",
+                        options: [
+                            { text: "આ ભેટ અમૂલ્ય છે, હું તેને હંમેશા સાચવીશ.", correct: false, feedback: "આ વિચાર આસક્તિ દર્શાવે છે, જે અનિત્ય ભાવનાથી વિરુદ્ધ છે." },
+                            { text: "આ ક્ષણિક આનંદ છે. ભેટ અને આનંદ બંને નાશવંત છે.", correct: true, feedback: "ખૂબ સરસ! આ અનિત્ય ભાવનાનું સાચું ચિંતન છે." }
+                        ]
+                    },
+                    {
+                        title: "૨. અશરણ ભાવના",
+                        description: "આ જગતમાં કોઈ કોઈનું શરણ નથી. રાજા, દેવતા કે કોઈ સ્વજન મૃત્યુ, રોગ અને ઘડપણથી બચાવી શકતું નથી. માત્ર જિનધર્મ જ સાચું શરણ છે, જે જન્મ-મરણના ફેરાથી મુક્તિ અપાવે છે.",
+                        question: "જ્યારે જીવનમાં મુશ્કેલી આવે, ત્યારે સાચો સહારો કોનો લેવો જોઈએ?",
+                        options: [
+                            { text: "શક્તિશાળી અને ધનવાન લોકોનો, કારણ કે તેઓ મદદ કરી શકે છે.", correct: false, feedback: "ભૌતિક સહારો પણ અનિત્ય છે. સાચું શરણ તો ધર્મ જ છે." },
+                            { text: "ધર્મ અને સદાચારનો, કારણ કે તે જ આત્માનું કલ્યાણ કરે છે.", correct: true, feedback: "ઉત્તમ વિચાર! ધર્મ જ દરેક પરિસ્થિતિમાં સાચું શરણ છે." }
+                        ]
+                    },
+                    {
+                        title: "૩. સંસાર ભાવના",
+                        description: "આ જીવ ૮૪ લાખ યોનિમાં અનંત વાર જન્મ-મરણ કરી ચૂક્યો છે. સંસારનું દરેક સુખ-દુઃખ અનંત વાર ભોગવી ચૂક્યો છે. હવે આ સંસારના ચક્રથી કંટાળીને મોક્ષ માર્ગે વળવાનો સમય છે.",
+                        question: "વારંવાર મળતા દુન્યવી સુખ-દુઃખ વિશે શું વિચારવું જોઈએ?",
+                        options: [
+                            { text: "આ બધું અનંતકાળથી ચાલતું આવ્યું છે અને આમ જ ચાલશે.", correct: false, feedback: "આ વિચાર સંસારમાં જ રખડાવે છે. હવે તેમાંથી બહાર નીકળવાનો છે." },
+                            { text: "આ ભ્રમણથી થાકીને હવે મારે આત્માના શાશ્વત સુખની શોધ કરવી છે.", correct: true, feedback: "આ જ સંસાર ભાવનાનો સાર છે. હવે મોક્ષ માટે પ્રયત્ન કરો." }
+                        ]
+                    },
+                    {
+                        title: "૪. એકત્વ ભાવના",
+                        description: "જીવ એકલો જ જન્મે છે અને એકલો જ મરે છે. કોઈ કોઈનું નથી. તું એકલો છે, તદ્દન એકલો. એકત્વ એ તારી કમનસીબી નથી, તારું ઐશ્વર્ય છે. આ ભ્રમણા છોડીને એકત્વની મસ્તીમાં મસ્ત થઈ જા.",
+                        question: "તમારા કર્મોનું ફળ કોણ ભોગવે છે?",
+                        options: [
+                            { text: "હું અને મારો પરિવાર સાથે મળીને ભોગવીએ છીએ.", correct: false, feedback: "આ એક ભ્રમ છે. દરેક જીવ પોતાના કર્મોનું ફળ એકલો જ ભોગવે છે." },
+                            { text: "માત્ર હું એકલો જ મારા કર્મોનું ફળ ભોગવું છું.", correct: true, feedback: "સંપૂર્ણ સત્ય! આ જ એકત્વ ભાવના છે." }
+                        ]
+                    },
+                    {
+                        title: "૫. અન્યત્વ ભાવના",
+                        description: "શરીર અને આત્મા બંને જુદા છે. શરીર જડ છે, આત્મા ચેતન છે. શરીર નાશવંત છે, આત્મા શાશ્વત છે. જ્યારે શરીર પણ તારું નથી, તો ઘર, પરિવાર અને સંપત્તિ તારા કેવી રીતે હોઈ શકે?",
+                        question: "જ્યારે કોઈ તમારા શરીરની પ્રશંસા કરે, ત્યારે શું વિચારવું?",
+                        options: [
+                            { text: "તેઓ મારી પ્રશંસા કરી રહ્યા છે, મને ગર્વ થવો જોઈએ.", correct: false, feedback: "આ દેહાધ્યાસ છે. શરીર અને તમે (આત્મા) ભિન્ન છો." },
+                            { text: "તેઓ શરીરની પ્રશંસા કરે છે, જે મારાથી અલગ અને નાશવંત છે.", correct: true, feedback: "આ જ સાચો વિવેક છે. તમે શરીર નથી, પણ શાશ્વત આત્મા છો." }
+                        ]
+                    },
+                    {
+                        title: "૬. અશુચિ ભાવના",
+                        description: "આ શરીર નવ દ્વારોથી મળ, મૂત્ર જેવી ગંદકી વહાવે છે. તે અંદરથી અશુદ્ધિઓનો ભંડાર છે. તેને ગમે તેટલું શણગારો, તેનો સ્વભાવ અશુચિ જ છે. આત્મા જ પરમ શુચિ છે.",
+                        question: "શરીરની સુંદરતા અને સ્વચ્છતા માટે શું કરવું જોઈએ?",
+                        options: [
+                            { text: "શરીરને સુંદર દેખાડવા માટે દરેક પ્રયત્ન કરવો જોઈએ.", correct: false, feedback: "બાહ્ય સુંદરતા ક્ષણિક અને ભ્રામક છે. શરીરનો સ્વભાવ અશુચિ છે." },
+                            { text: "શરીરની માવજત કરવી, પણ તેની અશુચિ પ્રકૃતિને યાદ રાખી તેનાથી નિર્લેપ રહેવું.", correct: true, feedback: "આ જ સાચી સમજ છે. આત્માની શુદ્ધિ પર ધ્યાન કેન્દ્રિત કરો." }
+                        ]
+                    },
+                    {
+                        title: "૭. આશ્રવ ભાવના",
+                        description: "મિથ્યાત્વ, અવિરતિ, કષાય અને યોગ - આ ચાર કારણોથી આત્મામાં કર્મોની ઘુસણખોરી થાય છે, તેને આશ્રવ કહે છે. શુભ પ્રવૃત્તિથી શુભ અને અશુભ પ્રવૃત્તિથી અશુભ કર્મ બંધાય છે.",
+                        question: "ક્રોધ આવે ત્યારે શું થાય છે?",
+                        options: [
+                            { text: "ક્રોધ કરવાથી મારું મન હલકું થાય છે.", correct: false, feedback: "ક્રોધ એ કષાય છે, જે અશુભ કર્મોના આશ્રવ (આગમન) નું મુખ્ય કારણ છે." },
+                            { text: "ક્રોધ કરવાથી મારા આત્મા પર અશુભ કર્મોનો બંધ પડે છે.", correct: true, feedback: "સાચું જ્ઞાન! ક્રોધ જેવા કષાયોથી બચવું એ કર્મ આશ્રવને રોકવાનો ઉપાય છે." }
+                        ]
+                    },
+                    {
+                        title: "૮. સંવર ભાવના",
+                        description: "આત્મામાં આવતા કર્મોના પ્રવાહને રોકવો તેને સંવર કહે છે. સમિતિ, ગુપ્તિ, ધર્મ, અનુપ્રેક્ષા, પરિષહજય અને ચારિત્ર દ્વારા કર્મ-આશ્રવને રોકી શકાય છે.",
+                        question: "મનમાં ખરાબ વિચારો આવે ત્યારે તેને રોકવા માટે શું કરવું?",
+                        options: [
+                            { text: "તે વિચારોમાં ડૂબી જવું.", correct: false, feedback: "આમ કરવાથી કર્મ આશ્રવ ચાલુ રહે છે. વિચારોને રોકવા જરૂરી છે." },
+                            { text: "મનને શુભ ધ્યાનમાં અને સારી પ્રવૃત્તિમાં જોડવું.", correct: true, feedback: "આ જ મનોગુપ્તિ છે, જે સંવરનો એક ઉત્તમ પ્રકાર છે." }
+                        ]
+                    },
+                    {
+                        title: "૯. નિર્જરા ભાવના",
+                        description: "પહેલાથી બંધાયેલા કર્મોને તપ દ્વારા ખપાવી દેવા તેને નિર્જરા કહે છે. તપની આગથી આત્મા શુદ્ધ બને છે. નિર્જરા બે પ્રકારની છે: અકામ અને સકામ.",
+                        question: "જીવનમાં કષ્ટ આવે ત્યારે તેને કેવી રીતે સહન કરવું?",
+                        options: [
+                            { text: "દુઃખી થઈને અને ફરિયાદ કરીને.", correct: false, feedback: "આ અકામ નિર્જરા છે, જેનાથી બહુ લાભ થતો નથી." },
+                            { text: "સમતાભાવે સહન કરીને, એમ વિચારીને કે મારા કર્મો નાશ પામી રહ્યા છે.", correct: true, feedback: "આ સકામ નિર્જરા છે, જે આત્માને શુદ્ધ કરે છે અને મોક્ષની નજીક લઈ જાય છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૦. ધર્મ સ્વાખ્યાતતા ભાવના",
+                        description: "જિનેશ્વર ભગવંતે કેવો સુંદર અને શુદ્ધ ધર્મ કહ્યો છે! ક્ષમા, માર્દવ, આર્જવ, શૌચ, સત્ય, સંયમ, તપ, ત્યાગ, અકિંચનતા અને બ્રહ્મચર્ય - આ દસ પ્રકારનો ધર્મ જ ભવસાગરથી તારે છે.",
+                        question: "સાચો ધર્મ શું છે?",
+                        options: [
+                            { text: "માત્ર પૂજા-પાઠ અને ક્રિયાકાંડ.", correct: false, feedback: "ક્રિયાકાંડ જરૂરી છે, પણ સાચો ધર્મ તો ક્ષમા, સત્ય, સંયમ જેવા ગુણોને જીવનમાં ઉતારવાનો છે." },
+                            { text: "આત્માના શુદ્ધ સ્વભાવમાં રમણ કરવું અને ઉત્તમ ગુણોને ધારણ કરવા.", correct: true, feedback: "આ જ ધર્મનો સાચો અર્થ છે, જે જિનેશ્વર ભગવંતે બતાવ્યો છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૧. લોકસ્વભાવ ભાવના",
+                        description: "આ વિશ્વ ત્રણ લોક (ઊર્ધ્વ, મધ્ય, અધો) માં વહેંચાયેલું છે. ક્યાંક સુખ છે, ક્યાંક દુઃખ છે. ક્યાંક જન્મ છે, ક્યાંક મરણ છે. આ લોકના સ્વભાવને જાણીને સુખ-દુઃખમાં સમતાભાવ રાખવો.",
+                        question: "જ્યારે તમે બીજાને અત્યંત સુખી જુઓ, ત્યારે શું વિચારવું?",
+                        options: [
+                            { text: "મને ઈર્ષ્યા થાય છે, મારે પણ એવું સુખ જોઈએ.", correct: false, feedback: "ઈર્ષ્યા કરવાથી નવા કર્મો બંધાય છે. લોકના સ્વભાવને સમજો." },
+                            { text: "આ તેમના પુણ્ય કર્મોનું ફળ છે, જે અનિત્ય છે. મારે મારા આત્મામાં સ્થિર રહેવું.", correct: true, feedback: "આ જ લોકસ્વભાવનું સાચું ચિંતન છે, જે સમતાભાવ તરફ દોરી જાય છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૨. બોધિદુર્લભ ભાવના",
+                        description: "મનુષ્ય જન્મ, આર્ય દેશ, ઉત્તમ કુળ, સ્વસ્થ ઇન્દ્રિયો અને સાચા ધર્મનું શ્રવણ મળવું અત્યંત દુર્લભ છે. આ બધું મળ્યા પછી પણ સાચી શ્રદ્ધા (સમ્યક્ત્વ) થવી એ તો મહાદુર્લભ છે.",
+                        question: "આ મનુષ્ય જીવન મળ્યું છે, તો તેનો શ્રેષ્ઠ ઉપયોગ શું છે?",
+                        options: [
+                            { text: "ભૌતિક સુખો અને સંપત્તિ ભેગી કરવી.", correct: false, feedback: "આ બધું તો અનંત વાર કર્યું. આ દુર્લભ અવસર આત્મ-કલ્યાણ માટે છે." },
+                            { text: "ધર્મ-આરાધના કરીને આત્માનું કલ્યાણ સાધવું.", correct: true, feedback: "ઉત્તમ! આ દુર્લભ બોધિને પામીને તેનો સદુપયોગ કરવો એ જ બુદ્ધિમાની છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૩. મૈત્રી ભાવના",
+                        description: "વિશ્વના સર્વ જીવો પ્રત્યે મિત્રતાનો ભાવ રાખવો. કોઈ દુઃખી ન થાઓ, કોઈ પાપ ન કરો, સૌ મોક્ષ પામો એવી શુભ ભાવના.",
+                        question: "જેણે તમારું ખરાબ કર્યું હોય, તેના પ્રત્યે કેવો ભાવ રાખવો?",
+                        options: [
+                            { text: "બદલો લેવાનો ભાવ.", correct: false, feedback: "આ વેરભાવ સંસાર વધારે છે. મૈત્રી ભાવના સર્વ જીવો માટે છે." },
+                            { text: "તેના પ્રત્યે પણ મૈત્રીભાવ, તે અજ્ઞાનતાને કારણે ભૂલ કરી રહ્યો છે.", correct: true, feedback: "આ જ સાચી મૈત્રી છે, જે તમારા આત્માને નિર્મળ બનાવે છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૪. પ્રમોદ ભાવના",
+                        description: "ગુણીજનોના ગુણોને જોઈને મનમાં આનંદ અનુભવવો, તેમની પ્રશંસા કરવી. ઈર્ષ્યાનો ત્યાગ કરીને ગુણો પ્રત્યે અનુરાગ કેળવવો.",
+                        question: "જ્યારે કોઈ તમારા કરતાં વધુ જ્ઞાની કે ગુણવાન વ્યક્તિ મળે ત્યારે?",
+                        options: [
+                            { text: "તેનાથી ઈર્ષ્યા કરવી અને તેની ખામીઓ શોધવી.", correct: false, feedback: "ઈર્ષ્યા એક મોટો દોષ છે. ગુણીના ગુણ જોઈ રાજી થવું જોઈએ." },
+                            { text: "તેમના ગુણોની અનુમોદના કરવી અને તે ગુણો કેળવવાનો પ્રયત્ન કરવો.", correct: true, feedback: "આ પ્રમોદ ભાવના છે, જે આપણને પણ ગુણવાન બનાવે છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૫. કરુણા ભાવના",
+                        description: "દુઃખી, પીડિત અને પાપી જીવો પ્રત્યે દયાનો ભાવ રાખવો અને તેમના દુઃખ દૂર કરવાની ભાવના રાખવી.",
+                        question: "એક ઘાયલ પક્ષીને જોઈને તમને શું વિચાર આવે છે?",
+                        options: [
+                            { text: "આ તો એના કર્મ છે, મારે શું.", correct: false, feedback: "આ ઉદાસીનતા છે, કરુણા નહીં. દુઃખી જીવ પ્રત્યે દયાનો ભાવ જરૂરી છે." },
+                            { text: "અરે રે! આ કેટલું પીડાઈ રહ્યું છે. હું તેની મદદ કેવી રીતે કરી શકું?", correct: true, feedback: "આ જ સાચી કરુણા છે, જે હૃદયને કોમળ બનાવે છે." }
+                        ]
+                    },
+                    {
+                        title: "૧૬. માધ્યસ્થ્ય ભાવના",
+                        description: "જે જીવો ક્રૂર છે, ધર્મની નિંદા કરે છે અને સુધરવા તૈયાર નથી, તેમના પ્રત્યે ઉપેક્ષાનો ભાવ રાખવો. તેમના પર ક્રોધ કે દ્વેષ ન કરવો, પણ તેમનાથી અલિપ્ત રહેવું.",
+                        question: "કોઈ વ્યક્તિ જાણીજોઈને ખોટું આચરણ કરે અને સમજાવવા છતાં ન સમજે તો?",
+                        options: [
+                            { text: "તેની સાથે ઝઘડો કરવો અને તેને બળજબરીથી સુધારવાનો પ્રયત્ન કરવો.", correct: false, feedback: "આમ કરવાથી તમારું મન અશાંત થશે. કેટલાક જીવોને તેમના હાલ પર છોડી દેવા યોગ્ય છે." },
+                            { text: "તેના પર ક્રોધ કર્યા વગર, મનમાં સમતા રાખીને તેનાથી દૂર રહેવું.", correct: true, feedback: "આ જ માધ્યસ્થ્ય ભાવના છે. પોતાના ચિત્તની શાંતિ જાળવી રાખવી." }
+                        ]
+                    }
+                ]
+            },
+            eng: {
+                title: "16 Bhavana: The Path to Liberation",
+                subtitle: "Inspired by Acharya Shri Hemchandrasuri",
+                bhavanas: [
+                    {
+                        title: "1. Anitya Bhavana (Impermanence)",
+                        description: "Everything in this world is impermanent. Home, body, relatives, wealth, everything is perishable. Why develop attachment? Attachment to the perishable will lead to your own destruction. Attachment to the eternal will make you eternal.",
+                        question: "You receive a gift you love. What should be your true thought?",
+                        options: [
+                            { text: "This gift is precious, I will keep it forever.", correct: false, feedback: "This thought shows attachment, which is contrary to the contemplation of impermanence." },
+                            { text: "This is a momentary joy. Both the gift and the joy are perishable.", correct: true, feedback: "Excellent! This is the true contemplation of impermanence." }
+                        ]
+                    },
+                    {
+                        title: "2. Asharan Bhavana (Helplessness)",
+                        description: "In this world, no one is a true refuge. Kings, gods, or relatives cannot save you from death, disease, and old age. Only the Jain Dharma is the true refuge, which provides liberation from the cycle of birth and death.",
+                        question: "When facing difficulties in life, whose true support should one seek?",
+                        options: [
+                            { text: "Powerful and wealthy people, because they can help.", correct: false, feedback: "Material support is also impermanent. The only true refuge is Dharma." },
+                            { text: "Dharma (righteousness) and virtue, as they alone lead to the soul's welfare.", correct: true, feedback: "A noble thought! Dharma is the true refuge in every situation." }
+                        ]
+                    },
+                    {
+                        title: "3. Sansaar Bhavana (Worldly Existence)",
+                        description: "The soul has been born and has died infinite times in 8.4 million life forms. It has experienced every worldly pleasure and pain countless times. Now is the time to get weary of this cycle and turn to the path of liberation.",
+                        question: "What should one think about the recurring worldly pleasures and pains?",
+                        options: [
+                            { text: "This has been going on for eternity and will continue this way.", correct: false, feedback: "This thought keeps you wandering in the world. The goal is to get out of it." },
+                            { text: "Tired of this wandering, I must now seek the eternal bliss of the soul.", correct: true, feedback: "This is the essence of contemplating the worldly existence. Now, strive for liberation." }
+                        ]
+                    },
+                    {
+                        title: "4. Ekatva Bhavana (Solitude)",
+                        description: "The soul is born alone and dies alone. No one belongs to anyone. You are alone, completely alone. Solitude is not your misfortune, it is your splendor. Leave this illusion and revel in the bliss of solitude.",
+                        question: "Who bears the fruit of your karmas?",
+                        options: [
+                            { text: "Me and my family bear them together.", correct: false, feedback: "This is an illusion. Every soul bears the fruit of its own karmas alone." },
+                            { text: "Only I, alone, bear the fruit of my karmas.", correct: true, feedback: "The absolute truth! This is the contemplation of solitude." }
+                        ]
+                    },
+                    {
+                        title: "5. Anyatva Bhavana (Otherness)",
+                        description: "The body and the soul are separate. The body is inert, the soul is conscious. The body is perishable, the soul is eternal. When even your body is not yours, how can your house, family, and wealth be yours?",
+                        question: "When someone praises your physical appearance, what should you think?",
+                        options: [
+                            { text: "They are praising me, I should feel proud.", correct: false, feedback: "This is attachment to the body. You (the soul) and the body are separate." },
+                            { text: "They are praising the body, which is separate from me and is perishable.", correct: true, feedback: "This is true discernment. You are not the body, but the eternal soul." }
+                        ]
+                    },
+                    {
+                        title: "6. Ashuchi Bhavana (Impurity)",
+                        description: "This body is a source of filth, oozing impurities from its nine openings. It is a repository of uncleanliness within. No matter how much you adorn it, its nature remains impure. Only the soul is supremely pure.",
+                        question: "Regarding the body's beauty and cleanliness, what should be the attitude?",
+                        options: [
+                            { text: "Every effort should be made to make the body look beautiful.", correct: false, feedback: "External beauty is transient and deceptive. The nature of the body is impure." },
+                            { text: "Care for the body, but remember its impure nature and remain detached from it.", correct: true, feedback: "This is the right understanding. Focus on the purity of the soul." }
+                        ]
+                    },
+                    {
+                        title: "7. Aasrav Bhavana (Inflow of Karma)",
+                        description: "Due to wrong belief, non-restraint, passions (anger, pride, deceit, greed), and activities of mind, speech, and body, karmas flow into the soul. This is Aasrav. Good activities attract good karma, and bad activities attract bad karma.",
+                        question: "What happens when you get angry?",
+                        options: [
+                            { text: "Anger helps me feel relieved and lightens my mind.", correct: false, feedback: "Anger is a passion (kashay) that is a primary cause for the inflow (aasrav) of negative karmas." },
+                            { text: "Anger causes the bondage of negative karmas to my soul.", correct: true, feedback: "True knowledge! Avoiding passions like anger is the way to stop the inflow of karma." }
+                        ]
+                    },
+                    {
+                        title: "8. Samvar Bhavana (Stoppage of Karma)",
+                        description: "To stop the inflow of new karmas into the soul is Samvar. This can be achieved through self-control, carefulness, observance of dharma, contemplation, enduring hardships, and right conduct.",
+                        question: "How can you stop negative thoughts from entering your mind?",
+                        options: [
+                            { text: "By indulging in those thoughts.", correct: false, feedback: "This allows the inflow of karma to continue. It is necessary to stop the thoughts." },
+                            { text: "By engaging the mind in auspicious meditation and good activities.", correct: true, feedback: "This is true control of the mind (Mano-gupti), an excellent form of Samvar." }
+                        ]
+                    },
+                    {
+                        title: "9. Nirjara Bhavana (Shedding of Karma)",
+                        description: "The shedding or destruction of accumulated karmas through penance (tap) is Nirjara. The soul becomes pure through the fire of austerity. Nirjara is of two types: forced (akaam) and planned (sakaam).",
+                        question: "How should one endure hardship in life?",
+                        options: [
+                            { text: "By feeling miserable and complaining.", correct: false, feedback: "This leads to forced shedding (akaam nirjara), which is not very beneficial." },
+                            { text: "With equanimity, thinking that my past karmas are being destroyed.", correct: true, feedback: "This is planned shedding (sakaam nirjara), which purifies the soul and brings it closer to liberation." }
+                        ]
+                    },
+                    {
+                        title: "10. Dharma Swakhyatata Bhavana (Well-proclaimed Religion)",
+                        description: "How beautiful and pure is the religion preached by the Jinas! Forgiveness, humility, straightforwardness, purity, truth, self-control, penance, renunciation, non-possession, and celibacy - this ten-fold dharma helps cross the ocean of existence.",
+                        question: "What is true religion?",
+                        options: [
+                            { text: "Only performing rituals and worship.", correct: false, feedback: "Rituals are important, but true religion is about incorporating virtues like forgiveness, truth, and self-control into one's life." },
+                            { text: "To dwell in the pure nature of the soul and to cultivate supreme virtues.", correct: true, feedback: "This is the true meaning of Dharma, as shown by the Jinas." }
+                        ]
+                    },
+                    {
+                        title: "11. Lokasvabhava Bhavana (Nature of the Universe)",
+                        description: "This universe is composed of three realms. There is happiness somewhere, and suffering elsewhere. There is birth here, and death there. Knowing the nature of the universe, one should maintain equanimity in pleasure and pain.",
+                        question: "When you see others who are extremely happy, what should you think?",
+                        options: [
+                            { text: "I feel envious; I want that kind of happiness too.", correct: false, feedback: "Envy creates new karmic bondage. Understand the nature of the universe." },
+                            { text: "This is the fruit of their good karmas, which is impermanent. I must remain steady in my own soul.", correct: true, feedback: "This is the correct contemplation of the universe's nature, leading to equanimity." }
+                        ]
+                    },
+                    {
+                        title: "12. Bodhidurlabh Bhavana (Rarity of Enlightenment)",
+                        description: "It is extremely rare to attain a human birth, a noble country, a good family, healthy senses, and the opportunity to listen to the true dharma. Even after attaining all this, it is exceptionally rare to achieve right faith (Samyaktva).",
+                        question: "Having obtained this human life, what is its best use?",
+                        options: [
+                            { text: "To accumulate material pleasures and wealth.", correct: false, feedback: "You have done this countless times. This rare opportunity is for self-realization." },
+                            { text: "To achieve the soul's welfare through religious practice and devotion.", correct: true, feedback: "Excellent! It is wise to make good use of this rare enlightenment." }
+                        ]
+                    },
+                    {
+                        title: "13. Maitri Bhavana (Friendliness)",
+                        description: "To have a feeling of friendship towards all living beings in the universe. A wish that no one should suffer, no one should commit sin, and all should attain liberation.",
+                        question: "How should you feel towards someone who has wronged you?",
+                        options: [
+                            { text: "A feeling of revenge.", correct: false, feedback: "This feeling of hatred increases worldly existence. Friendliness should be for all beings." },
+                            { text: "Friendship towards them as well; they have erred out of ignorance.", correct: true, feedback: "This is true friendship, which purifies your soul." }
+                        ]
+                    },
+                    {
+                        title: "14. Pramod Bhavana (Appreciation)",
+                        description: "To feel joy upon seeing the virtues in virtuous people and to praise them. To abandon jealousy and cultivate admiration for virtues.",
+                        question: "When you meet someone more knowledgeable or virtuous than you?",
+                        options: [
+                            { text: "Feel envious and try to find faults in them.", correct: false, feedback: "Envy is a major flaw. One should rejoice in seeing the virtues of the virtuous." },
+                            { text: "Appreciate their virtues and try to cultivate those virtues in oneself.", correct: true, feedback: "This is the contemplation of appreciation, which makes us virtuous too." }
+                        ]
+                    },
+                    {
+                        title: "15. Karuna Bhavana (Compassion)",
+                        description: "To feel compassion for the afflicted, suffering, and sinful beings, and to have the desire to alleviate their suffering.",
+                        question: "What comes to your mind when you see an injured bird?",
+                        options: [
+                            { text: "It's its karma, what can I do.", correct: false, feedback: "This is indifference, not compassion. A feeling of pity for a suffering being is necessary." },
+                            { text: "Oh! It is in so much pain. How can I help it?", correct: true, feedback: "This is true compassion, which makes the heart tender." }
+                        ]
+                    },
+                    {
+                        title: "16. Madhyasthya Bhavana (Equanimity)",
+                        description: "To maintain an attitude of indifference or neutrality towards those who are cruel, who slander the religion, and are unwilling to reform. One should not feel anger or malice towards them but remain detached.",
+                        question: "If a person knowingly does wrong and does not understand despite explanations?",
+                        options: [
+                            { text: "Argue with them and try to reform them by force.", correct: false, feedback: "Doing so will disturb your own peace of mind. It is better to leave some beings to their fate." },
+                            { text: "Without getting angry, maintain equanimity and stay away from them.", correct: true, feedback: "This is the contemplation of equanimity. It is important to maintain one's own peace of mind." }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        function renderContent(lang) {
+            const data = gameData[lang];
+            const isGuj = lang === 'guj';
+
+            // Update titles and fonts
+            mainTitle.textContent = data.title;
+            mainSubtitle.textContent = data.subtitle;
+            document.documentElement.lang = isGuj ? 'gu' : 'en';
+            document.body.classList.toggle('guj-font', isGuj);
+            mainTitle.classList.toggle('guj-font', isGuj);
+
+            // Clear previous content
+            gameContainer.innerHTML = '';
+
+            // Generate new content
+            data.bhavanas.forEach((bhavana, index) => {
+                const card = document.createElement('div');
+                card.className = `card card-${index + 1}`;
+
+                const optionsHtml = bhavana.options.map((option, optionIndex) => 
+                    `<button 
+                        class="btn-choice w-full text-left p-3 mt-2 rounded-lg ${isGuj ? 'guj-font' : ''}"
+                        data-correct="${option.correct}"
+                        data-feedback="${option.feedback}"
+                    >${option.text}</button>`
+                ).join('');
+
+                card.innerHTML = `
+                    <h2 class="text-2xl font-bold text-gray-700 mb-2 ${isGuj ? 'guj-font' : ''}">${bhavana.title}</h2>
+                    <p class="text-gray-600 leading-relaxed ${isGuj ? 'guj-font' : ''}">${bhavana.description}</p>
+                    <div class="mt-4">
+                        <p class="font-semibold text-gray-800 ${isGuj ? 'guj-font' : ''}">${bhavana.question}</p>
+                        <div class="options-container mt-2">
+                            ${optionsHtml}
+                        </div>
+                        <div class="explanation text-sm ${isGuj ? 'guj-font' : ''}"></div>
+                    </div>
+                `;
+                gameContainer.appendChild(card);
+            });
+
+            // Add event listeners to the new buttons
+            addChoiceListeners();
+        }
+
+        function handleChoice(event) {
+            const selectedButton = event.target.closest('.btn-choice');
+            if (!selectedButton) return;
+
+            const parentCard = selectedButton.closest('.card');
+            const optionsContainer = selectedButton.parentElement;
+            const explanationDiv = parentCard.querySelector('.explanation');
+            const allButtons = optionsContainer.querySelectorAll('.btn-choice');
+
+            // Prevent re-clicking
+            allButtons.forEach(btn => btn.disabled = true);
+
+            const isCorrect = selectedButton.dataset.correct === 'true';
+            const feedback = selectedButton.dataset.feedback;
+
+            // Show feedback
+            explanationDiv.textContent = feedback;
+            explanationDiv.classList.add('show');
+            explanationDiv.style.color = isCorrect ? '#059669' : '#dc2626';
+
+            // Style all buttons
+            allButtons.forEach(btn => {
+                if (btn.dataset.correct === 'true') {
+                    btn.classList.add('correct');
+                } else {
+                    btn.classList.add('incorrect');
+                }
+                // Make the non-selected buttons slightly transparent
+                if (btn !== selectedButton) {
+                    btn.style.opacity = '0.6';
+                }
+            });
+        }
+
+        function addChoiceListeners() {
+            const choiceButtons = document.querySelectorAll('.btn-choice');
+            choiceButtons.forEach(button => {
+                button.addEventListener('click', handleChoice);
+            });
+        }
+
+        // Language switcher logic
+        btnGuj.addEventListener('click', () => {
+            renderContent('guj');
+            btnGuj.classList.add('active');
+            btnEng.classList.remove('active');
+        });
+
+        btnEng.addEventListener('click', () => {
+            renderContent('eng');
+            btnEng.classList.add('active');
+            btnGuj.classList.remove('active');
+        });
+
+        // Initial render
+        window.onload = () => {
+            renderContent('guj');
+        };
+    </script>
+
+</body>
+</html>

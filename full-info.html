@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 Contemplations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gujarati-text, .gujarati-text h3, .gujarati-text h4 {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+        }
+        .active-lang {
+            background-color: #4f46e5; /* Indigo-600 */
+            color: white;
+        }
+        .inactive-lang {
+            background-color: #e0e7ff; /* Indigo-100 */
+            color: #3730a3; /* Indigo-800 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4">
+            <h1 id="main-title" class="text-2xl md:text-3xl font-bold text-center text-indigo-800">The 16 Contemplations</h1>
+            <h2 id="author-title" class="text-center text-gray-600 mt-1">Written by Acharya Shri Hemchandrasuri</h2>
+            <div class="flex justify-center space-x-4 mt-4">
+                <button id="btn-en" class="px-6 py-2 rounded-full font-semibold transition-colors duration-300 active-lang">English</button>
+                <button id="btn-gu" class="px-6 py-2 rounded-full font-semibold transition-colors duration-300 inactive-lang gujarati-text">ગુજરાતી</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4 md:p-6">
+        <!-- English Content -->
+        <div id="content-en">
+            <div class="space-y-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-500">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">Anitya Bhavana (The Contemplation of Impermanence)</h3>
+                    <p class="text-gray-700 leading-relaxed">Whatever is visible in this world is all impermanent. Home, body, relatives, wealth, power, youth, health, fame—everything is impermanent, perishable. It is here today, gone tomorrow. Why feel attachment to it? Why run after it? Why rejoice when you acquire it? Why sob and cry when you are separated from it?</p>
+                    <p class="text-gray-700 leading-relaxed mt-2">It is all a bubble, destined to burst one day. O Soul! Abandon all entanglement with the impermanent and become absorbed in your eternal nature. Through attachment to the perishable, you will continue to perish. Through attachment to the eternal, you will become eternal.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-cyan-500">
+                    <h3 class="text-xl font-bold text-cyan-700 mb-2">Asharan Bhavana (The Contemplation of Helplessness)</h3>
+                    <p class="text-gray-700 leading-relaxed">Think, who is your refuge? Who can assure you that you will never get cancer? Who can stop the rushing onset of your old age? Death is hanging right over your head. It is going to snatch you away at any moment. Tell me, is there any relative who can save you?</p>
+                    <p class="text-gray-700 leading-relaxed mt-2">Kings, great kings, emperors, and universal monarchs are also without refuge. Even the great gods and celestial lords are without refuge. So where do you even stand? O Soul! There is only one who is capable of saving you permanently from birth, old age, death, disease, suffering, and miserable states. That is the Jain Dharma. Take its refuge, and your work will be done.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-xl font-bold text-sky-700 mb-2">Sansar Bhavana (The Contemplation of Worldly Existence)</h3>
+                    <p class="text-gray-700 leading-relaxed">Eighty-four lakh life forms, eighty-four lakh hellish abodes, and the innumerable, countless space-points of the fourteen realms—in each of these, you have been born and have died infinite, infinite times. There is no suffering in the cycle of life that you have not endured infinitely. There is also no happiness that you have not received infinitely. There is no wealth that you have not acquired infinitely. There is no relationship that has not been formed with all beings numerous or infinite times. All became your loved ones, you became the loved one of all; all became your murderers, you became the murderer of all. O Soul! Enough, now it is too much. Now, get weary of this worldly cycle and fix your mind only on liberation (Moksha).</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-700 mb-2">Ekatva Bhavana (The Contemplation of Solitude)</h3>
+                    <p class="text-gray-700 leading-relaxed">A being is born alone and dies alone. When the road is very crowded, thousands of people are seen together, but in reality, they are all alone because no one truly belongs to anyone. All are together for a short time. Then, all go their separate ways. In fact, even when they seem to be together, no one is with anyone. O Soul! Fix this in your mind. No one is yours, you belong to no one; you are alone, completely alone. Solitude is not your misfortune; it is your splendor, your identity. The joy that is in solitude is nowhere else. The root of all your troubles is that you have considered the crowd on the street as your family. And then, at every step, you become miserable from its entanglements. Let go of this illusion and become engrossed in the bliss of solitude.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-2">Anyatva Bhavana (The Contemplation of Otherness)</h3>
+                    <p class="text-gray-700 leading-relaxed">Otherness means separateness. Consider that the body is separate, and you are separate. It is inanimate—you are consciousness; it is perishable—you are eternal; it is impure—you are pure; it is ignorant—you are wise. Then how can it be you? And when you are separate even from the body, then you are utterly separate from home, relatives, wealth, etc. O Soul! The root of all your wanderings in existence is the madness of clinging to what is separate. What is separate is just separate. You may try a million times, you may move heaven and earth, you may struggle as much as you want, it will remain separate. Enough, now give up this madness. You do not need any 'other'. You need the contemplation of otherness.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-violet-500">
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">Ashuchi Bhavana (The Contemplation of Impurity)</h3>
+                    <p class="text-gray-700 leading-relaxed">If we search the whole world for the filthiest thing, what will be the answer? The body. From nine and twelve orifices, the body keeps oozing filth. If only the skin is removed from even the most excellent body in the world, forget touching it, even looking at it would become difficult. If we never dare to peek into a sewer line, then why do we try to look at the body? If we never put our hands in a sewer, then why do we try to touch the body? A madman is enjoying a water park inside a sewer, and we are searching for 'pleasure' in the body. In reality, there is no difference between these two incidents. O Soul! You may apply a million soaps or pour bottles of perfume, the body was impure, is impure, and will remain impure. Give up all attachment to it and become absorbed in your supremely pure nature.</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-700 mb-2">Asrava Bhavana (The Contemplation of Inflow of Karma)</h3>
+                    <p class="text-gray-700 leading-relaxed">The infiltration of karmas into the soul due to these four causes—wrong belief (mithyatva), non-restraint (avirati), passions (kashaya), and activities (yoga)—is called Asrava. Auspicious karmas are bound by the auspicious activities of mind, speech, and body, and inauspicious karmas are bound by inauspicious activities. If there are auspicious feelings like friendliness in the mind, then auspicious karma is bound; and if passions and sensual pleasures play in the mind, then inauspicious karma is bound. The speech that is rooted in scriptural knowledge binds auspicious karma, and the speech that is contrary to scriptural knowledge binds inauspicious karma. If the body is endowed with control of its actions (kayagupti), then auspicious karma is bound, and if the body commits sins like violence, then inauspicious karma is bound. O Soul! You have seen much, much on the outside; now look inside, look at these inflows.</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-fuchsia-500">
+                    <h3 class="text-xl font-bold text-fuchsia-700 mb-2">Samvar Bhavana (The Contemplation of Stoppage of Karma)</h3>
+                    <p class="text-gray-700 leading-relaxed">To cover all the pores of the inflows and to stop the infiltration of karmas happening in the soul is called Samvar. To stop the arrival of karmas into the soul is the material stoppage (dravya samvar). To not do anything that increases the worldly cycle is the psychic stoppage (bhava samvar). The remedy by which a particular inflow is stopped should be adopted. O Soul! With forgiveness, you stop anger; with humility, you stop pride; with straightforwardness, you stop deceit; and with contentment, you stop greed. Overcome the senses with self-control; with the guarding of mind, speech, and body, you stop the inflow of activities. Through the renunciation of sinful activities, you stop the inflow of non-restraint, and with right belief, you confront wrong belief. Become steady in auspicious meditation and conquer sorrowful and wrathful meditations. O Soul! To stop the inflows means to stop hell, to stop the lowest form of existence (nigod), and to stop the wanderings of rebirth. Do not fall back in this at all.</p>
+                </div>
+                <!-- Card 9 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-700 mb-2">Nirjara Bhavana (The Contemplation of Shedding of Karma)</h3>
+                    <p class="text-gray-700 leading-relaxed">The seed of worldly existence is karma; that by which it is shed is called Nirjara. To shed karma unwillingly by enduring the sorrows of the world is premature shedding (akam nirjara). To destroy karmas head-on through penance is intentional shedding (sakam nirjara). Just as impure gold becomes radiant and pure through fire, so too the soul becomes pure through the fire of penance. Fasting and other penances, eating less than one's fill, taking vows regarding possessions, renouncing tasty foods, enduring bodily hardships, and seclusion are the external penances. Expiation, service, scriptural study, humility, abandonment of the body, and meditation are the internal penances. When the fire of external and internal penance blazes, even the heaviest and stickiest karmas are burnt to ashes. O Soul! Since beginningless time, you have done only one thing: burning your own virtues. Enough, now it is too much. Now, you ignite the fire of penance and reduce your karmas to ashes.</p>
+                </div>
+                <!-- Card 10 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
+                    <h3 class="text-xl font-bold text-rose-700 mb-2">Dharma Swakhyatata Bhavana (The Contemplation on the Well-Propounded Dharma)</h3>
+                    <p class="text-gray-700 leading-relaxed">What a beautiful and pure religion the Jineshwar Bhagwants (Victorious Lords) have proclaimed! This contemplation is called Dharma Swakhyatata. One who takes the support of this religion does not drown in the ocean of worldly existence. Forgiveness, humility, straightforwardness, non-attachment, penance, self-control, truth, purity, non-possession, and celibacy—this is the Jain Dharma. Dharma is capable of protecting you from all sorrows. There is no truer mother, truer father, truer relative, or truer friend than Dharma. That the ocean does not sweep over the earth is the effect of Dharma. That the clouds rain at the proper time is the effect of Dharma. That fire does not travel sideways and the wind does not blow upwards is the effect of Dharma. That the fourteen realms are suspended in the infinite non-universe is the effect of Dharma. That the sun and the moon rise and the world can sustain itself is the effect of Dharma. O Soul! The only source of all external and internal happiness and prosperity is Dharma, and nothing else.</p>
+                </div>
+                <!-- Card 11 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Lokasvabhava Bhavana (The Contemplation on the Nature of the Universe)</h3>
+                    <p class="text-gray-700 leading-relaxed">The shape of this universe is like that of a man standing with his legs apart and both hands on his waist. Divine plays and music are going on in the celestial realms, while chaos reigns in hell. In countless continents and oceans, animals, birds, and aquatic creatures are chewing each other alive, while infinite, infinite beings in the lowest form of existence (nigod) are continuously being born and dying. On one hand, some are dancing like mad in a wedding celebration, while at the same time, somewhere else, others are beating their heads and crying over the death of a beloved relative. Somewhere there are festivals, somewhere there are wars; somewhere joy is overflowing, somewhere the ocean of sorrow has destroyed everything. Somewhere there is intense pleasure, somewhere there is sharp pain. O Soul! Look at this universe with a discerning eye. By doing so, your own happiness and sorrow will seem insignificant. Your mind will become stable, and with it, springs of spiritual bliss will gush forth from within you.</p>
+                </div>
+                <!-- Card 12 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-xl font-bold text-orange-700 mb-2">Bodhidurlabh Bhavana (The Contemplation on the Rarity of Enlightenment)</h3>
+                    <p class="text-gray-700 leading-relaxed">Through premature shedding of karma (akam nirjara), when an ocean of merit is filled drop by drop, this being becomes a mobile being from a stationary one. When a second ocean of merit is filled, it attains the five senses. When a third ocean of merit is filled, it attains a human birth. When a fourth ocean of merit is filled, it attains a noble land (Arya desh). When a fifth ocean of merit is filled, it attains a high family. When a sixth ocean of merit is filled, it attains a complete senses. When a seventh ocean of merit is filled, it attains a full lifespan. When an eighth ocean of merit is filled, it attains a true Guru and the opportunity to listen to Dharma. But even after attaining all this, it is rare for a being to develop faith and attain the gem of enlightenment (bodhilabh). A being who has come this high can also fall again and end up in the lowest form of existence (nigod). O Soul! Think with a calm mind, how rare is this gem of enlightenment! It has barely come into your hands. Before it falls into the unfathomable ocean of worldly existence, you must achieve your own welfare.</p>
+                </div>
+                <!-- Card 13 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                    <h3 class="text-xl font-bold text-amber-700 mb-2">Maitri Bhavana (The Contemplation of Friendship)</h3>
+                    <p class="text-gray-700 leading-relaxed">Let no one in the world commit sins, and let no one in the world be unhappy. May all beings attain liberation—such a feeling is called Maitri. O Soul! Think that you have no enemy; all are your friends. All beings have been your beloved relatives infinite times; among them, who is your enemy? This is, in fact, your entire family. You should think that these four types of beings, like one-sensed beings, etc., may also quickly rise higher, attain the gem of enlightenment, and become free from all sorrows forever. O Soul! How much joy you feel upon seeing your beloved son! Even if he does something a little inappropriate, you still have so much affection for him. Just bring this same feeling to the entire world. All the impurity within you will be destroyed, and there will be bliss and only bliss.</p>
+                </div>
+                <!-- Card 14 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-bold text-yellow-700 mb-2">Pramod Bhavana (The Contemplation of Joy)</h3>
+                    <p class="text-gray-700 leading-relaxed">To dance with inner joy upon seeing the virtues of virtuous people is called Pramod Bhavana. O Soul! Look at the Arihant Bhagwants (Enlightened Beings). How great are their divine attributes! How great is their meritorious power! And what an unparalleled favor they have bestowed upon the entire universe! You see the perfection of the Siddhas (liberated souls), see the fivefold conduct of the Acharyas (spiritual leaders). See the imparting of knowledge by the Upadhyayas (teachers) and the spiritual practice of the Sadhus (monks). The virtues are such that three and a half crore hair follicles dance with joy, and bliss pervades every single part of the soul. Look at these male and female lay followers (shravak-shravikas), how wonderful is their devotion to the Lord! How their joy for giving to worthy recipients is leaping up by yards! Just look, there are couples who practice unbroken celibacy from the first day of marriage. There are ascetics who perform penances from Ayambil to Varshitap and Shrenitap. There are fortunate ones who give donations of crores and who put their salary envelopes in the temple treasury. Oh, even among others, how virtuous some beings are! How pure is their foundation of following the right path... Just look and dance, look and dance. If you learn this dance, all the dances of the world will cease.</p>
+                </div>
+                <!-- Card 15 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-lime-500">
+                    <h3 class="text-xl font-bold text-lime-700 mb-2">Karuna Bhavana (The Contemplation of Compassion)</h3>
+                    <p class="text-gray-700 leading-relaxed">For the wretched, the sorrowful, the fearful, those begging for their lives, and sinful beings, to feel such a sentiment that "I shall remove their sorrows and sins," is called Karuna Bhavana. O Soul! Look at how miserable this world is! In the eighty-four lakh hellish abodes of the seven hells, countless, countless hellish beings are screaming. Even in the celestial realms, what terrible wars are going on. The animals eat each other and are eaten by each other, are cut alive, boiled alive, and roasted alive. What must their pain be like! Humans too, how miserable they are from conception, birth, disease, old age, troubles, worries, poverty, inflation, recession, insults, accidents, domestic strife, etc.! O Soul! The sorrows of this world are infinitely greater than your sorrows. You tell me, should you cry over your sorrows? Or should you melt with compassion for the sorrow of this world?</p>
+                </div>
+                <!-- Card 16 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-700 mb-2">Madhyasthya Bhavana (The Contemplation of Equanimity)</h3>
+                    <p class="text-gray-700 leading-relaxed">For those beings who are cruel-deeded, who shamelessly slander the gods and gurus, and who praise themselves, to maintain a feeling of indifference is called Madhyasthya Bhavana. O Soul! In the world, there are not just one type of beings; there are various kinds of beings. To make everyone understand and to reform everyone is not possible even for the Lord. Even the Lord was incapable of reforming beings like Sangam and Jamali. Just give up the insistence on what is not possible and immerse yourself in the feeling of equanimity. By insisting, they are not going to improve, but you are going to worsen your state. Whatever destiny is fixed for someone, that is the kind of intellect that will awaken in them. Nothing of yours will work there. O Soul! You give up all worries about others and immerse yourself in your pure nature. The most excellent pilgrimage in the universe is this—your pure nature. The coolness in it, the peace in it, and the joy in it, are nowhere else in the world.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gujarati Content -->
+        <div id="content-gu" class="hidden">
+            <div class="space-y-6 gujarati-text">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-500">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">અનિત્ય ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">આ જગતમાં જે કાંઈ પણ દેખાય છે તે બધું જ અનિત્ય છે. ઘર, શરીર, સ્વજન, સંપત્તિ, સત્તા, યૌવન, આરોગ્ય, યશ બધું જ અનિત્ય છે, નશ્વર છે. આજે છે, કાલે નથી. શા માટે એના પર રાગ કરવો ? શા માટે એની પાછળ દોડવું ? શા માટે એ મળે ને હરખાવું ? શા માટે એનાથી વિયોગ થાય ને ધુસકે ધુસકે રડવું ?</p>
+                    <p class="text-gray-700 leading-relaxed mt-2">એ બધું જ પરપોટો છે, એક દિવસ ફુટી જ જવાનો છે. આત્મન્ ! તું અનિત્યની બધી જ પળોજણને છોડી દે અને તારા નિત્ય સ્વરૂપમાં જ લયલીન થઈ જા. જે નાશવંત છે એના રાગથી તું નાશ પામતો રહીશ. જે શાશ્વત છે, એના રાગથી તું શાશ્વત બની જઈશ.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-cyan-500">
+                    <h3 class="text-xl font-bold text-cyan-700 mb-2">અશરણ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">તું વિચાર કે કોણ છે તારું શરણ ? તને કોણ ખાતરી આપી શકે છે કે તને કદી કેન્સર નહીં થાય, ધસમસતા આવતા તારા ઘડપણને કોણ અટકાવી શકે તેમ છે ? મોત તારા માથે જ છે. ગમે ત્યારે એ તને ઉપાડી લેવાનું છે ? બોલ, છે કોઈ એવું સ્વજન જે તને બચાવી શકે ?</p>
+                    <p class="text-gray-700 leading-relaxed mt-2">રાજા, મહારાજા, સમ્રાટ ને ચક્રવર્તીઓ પણ અશરણ હોય છે. મોટા મોટા દેવો ને દેવેન્દ્રો ય અશરણ હોય છે. તો તારી તો વાત જ ક્યાં રહી ? આત્મન્ ! ઍક જ વ્યક્તિ એવી છે જે તને જન્મ, જરા, મરણ, વ્યાધિ, વેદના, દુર્ગતિથી કાયમ માટે બચાવી લેવા સમર્થ છે. એ છે જિનધર્મ. તું એનું શરણ લઈ લે, તારું કામ થઈ જશે.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-xl font-bold text-sky-700 mb-2">સંસાર ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">ચોર્યાશી લાખ યોનિ, ચોર્યાશી લાખ નરકાવાસ અને ચૌદે રાજલોકના અસંખ્ય અસંખ્ય આકાશપ્રદેશ, આ દરેકે દરેકમાં તું અનંત અનંત વાર જન્મી ચૂક્યો છે ને મરી ચૂક્યો છે. સંસારનું એવું કોઈ દુઃખ નથી, જે તે અનંતીવાર ભોગવ્યું ન હોય, સંસારનું એવું કોઈ સુખ પણ નથી જે તને અનંતી વાર ન મળ્યું હોય. સંસારની એવી કોઈ સંપત્તિ પણ નથી, જે તને અનંતી વાર ન મળી હોય. એવો કોઈ સંબંધ નથી કે જે તારો સર્વ જીવો સાથે અનેક વાર કે અનંત વાર ન થયો હોય. બધા તારા વ્હાલા થયા, તું બધાનો વ્હાલો થયો, બધા તારા ખૂની થયા, તું બધાનો ખૂની થયો. આત્મન્ ! બસ, હવે બહુ થયું, હવે તું કંટાળ આ સંસારથી અને તારા મનને મોક્ષમાં જ સ્થિર કરી દે.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-700 mb-2">એકત્વ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">જીવ એકલો જ જન્મે છે અને એકલો જ મરે છે રસ્તા પર ખૂબ ભીડ હોય ત્યારે દેખાય હજારો જણ સાથે પણ આમ એ બધાં જ એકલા હોય છે, કારણ કે કોઈ કોઈનું હોતું જ નથી. બધા અલ્પ સમય માટે સાથે. પછી બધાં જ પોતપોતાના રસ્તે હકીકતમાં તો બધા સાથે લાગે ત્યારે ય કોઈ સાથે હોતું જ નથી. આત્મન્ ! તું મનમાં ફીટ કરી દે. તારું કોઈ જ નથી, તું કોઈનો નથી, તું એકલો છે, તદ્દન એકલો. એકત્વ એ તારી કમનસીબી નથી, તારું ઐશ્વર્ય છે, તારી અસ્મિતા છે. જે આનંદ એકત્વમાં છે એ બીજે ક્યાંય નથી. તારી બધી જ તકલીફનું મૂળ એ જ છે કે તે રસ્તાની ભીડને તારો પરિવાર માની લીધો છે. ને પછી ડગલે ને પગલે એની પળોજણથી તું દુઃખી દુઃખી થયા કરે છે. છોડી દે આ ભ્રમણા ને એકત્વની મસ્તીમાં મસ્ત થઈ જા.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-2">અન્યત્વ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">અન્યત્વ એટલે જુદાપણું. તું વિચાર કે શરીર જુદું છે ને તું જુદો છે. એ જડ - તું ચેતન, એ નશ્વર - તું શાશ્વત, એ અશુચિ - તું શુચિ, એ અજ્ઞ - તું સુજ્ઞ. તો પછી એ તું શી રીતે હોઈ શકે ? ને જ્યારે તું શરીર સુદ્ધાથી જુદો છે ત્યારે ઘર, સ્વજન, ધન વગેરેથી તો સુતરાં જુદો છે. આત્મન્ ! તારા સમસ્ત ભવભ્રમણનું મૂળ છે અળગાને વળગવાનું ગાંડપણ. જુદું એ જુદું જ છે. તું લાખ પ્રયાસ કરે, તું આકાશ-પાતાળ એક કરે, તું ગમે તેટલા ધમ-પછાડા કરે, એ જુદું જ રહેવાનું છે. બસ, હવે આ ગાંડપણ છોડી દે. તને 'અન્ય'ની કોઈ જરૂર જ નથી. તને જરૂર છે અન્યત્વ ભાવનાની.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-violet-500">
+                    <h3 class="text-xl font-bold text-violet-700 mb-2">અશુચિ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">આખી દુનિયામાં તપાસ કરીએ ગંદામાં ગંદી વસ્તુ કઈ છે ? જવાબ મળશે - શરીર. નવ અને બાર છિદ્રોમાંથી શરીર ગંદકીને ઝર્યા જ કરે છે. વિશ્વના સર્વોત્કૃષ્ટ શરીરથી પણ જો ફકત ચામડી દૂર કરી દેવાય, તો એને અડવાની વાત તો દૂર છે, એને જોવું ય અઘરું પડી જાય. જો ગટરલાઈનમાં ડોકિયું કરવાની ચેષ્ટા આપણે હરગીઝ નથી કરતા તો શરીરને જોવાની ચેષ્ટા શા માટે ? જો ગટરમાં જો આપણે હાથ નાંખતા જ નથી તો શરીરને અડવાની ચેષ્ટા શા માટે ? એક પાગલ ગટરની અંદર વૉટરપાર્કની મજા લઈ રહ્યો છે ને આપણે શરીરમાં 'મજા' શોધી રહ્યા છીએ. આ બે ઘટનામાં હકીકતમાં કોઈ જ ફરક નથી. આત્મન્ ! તું લાખ સાબુ લગાડ કે અત્તરની બાટલીઓ ઢોળ, શરીર તો અશુચિ જ હતું, અશુચિ જ છે ને અશુચિ જ રહેવાનું છે. તું એની બધી જ આસક્તિ છોડી દે અને તારા પરમ શુચિ સ્વરૂપમાં મગ્ન થઈ જા.</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-700 mb-2">આશ્રવ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">મિથ્યાત્વ, અવિરતિ, કષાય અને યોગ આ ચાર કારણોથી આત્મામાં કર્મોની ઘુસણખોરી થાય છે, એનું નામ આશ્રવ. મન-વચન-કાયાની શુભ પ્રવૃત્તિથી શુભ કર્મ બંધાય છે અને અશુભ પ્રવૃત્તિથી અશુભ કર્મ બંધાય છે. જો મનમાં મૈત્રી વગેરે શુભ ભાવનાઓ છે, તો શુભ કર્મ બંધાય છે અને જો મનમાં કષાયો અને વિષયો રમે છે, તો અશુભ કર્મ બંધાય છે. જે વચનના મૂળમાં શ્રુતજ્ઞાન છે એનાથી શુભ કર્મ બંધાય છે અને જે શ્રુતજ્ઞાનથી વિરુદ્ધ વચન છે, એનાથી અશુભ કર્મ બંધાય છે. શરીર જો કાયગુપ્તિથી યુક્ત છે, તો શુભ કર્મ બંધાય છે ને જો શરીર હિંસાદિ પાપો કરે છે તો અશુભ કર્મ બંધાય છે. આત્મન્ ! બહાર તો તે ઘણું ઘણું જોયું, હવે અંદર જો, આ આશ્રવોને જો.</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-fuchsia-500">
+                    <h3 class="text-xl font-bold text-fuchsia-700 mb-2">સંવર ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">આશ્રવોના બધાં જ છિદ્રોને ઢાંકી દેવા અને આત્મામાં થઈ રહેલી કર્મોની ઘુસણખોરી બંધ કરી દેવી એનું નામ સંવર. આત્મામાં કર્મોનું આગમન બંધ કરવું એ દ્રવ્ય સંવર છે. જેનાથી સંસાર વધે એવું કશું જ ન કરવું એ ભાવ સંવર છે. જે ઉપાયથી જે આશ્રવ ટળે એ ઉપાય આદરવો જોઈએ. આત્મન્ ! તું ક્ષમાથી ક્રોધને રોક, કોમળતાથી અભિમાનને રોક, સરળતાથી માયાને અને સંતોષથી લોભને રોક. સંયમથી વિષયોને પહોંચી વળ, મન-વચન-કાયાની ગુપ્તિથી તું યોગોના આશ્રવને અટકાવ. સાવદ્યત્યાગ દ્વારા તું અવિરતિનો આશ્રવ બંધ કરી દે અને સમ્યકત્વથી મિથ્યાત્વનો મુકાબલો કરી દે. તું શુભધ્યાનમાં સ્થિર થઈ જા અને આર્ત-રૌદ્ર ધ્યાન પર જીત મેળવી લે. આત્મન્ ! આશ્રવોને રોકવા એટલે નરકને રોકવી, નિગોદને રોકવી અને ભવભ્રમણને રોકવું. તું આમાં જરા ય પાછો પડતો નહીં.</p>
+                </div>
+                <!-- Card 9 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-700 mb-2">નિર્જરા ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">સંસારનું બીજ છે કર્મ, એ જેમાં જરી જાય છે એનું નામ નિર્જરા. સંસારના દુઃખો ભોગવીને પરાણે કર્મનિર્જરા કરવી, એ અકામનિર્જરા છે. તપ દ્વારા સામી છાતીએ કર્મોને ખપાવવા એ સકામ નિર્જરા છે. જેમ અશુદ્ધ સોનું દેદીપ્યમાન આગથી શુદ્ધ થઈ જાય છે તેમ તપની આગથી આત્મા પણ શુદ્ધ થઈ જાય છે. ઉપવાસાદિ તપ, ઉણોદરી, દ્રવ્યાદિ અભિગ્રહ, રસત્યાગ, કાયકલેશ અને સંલીનતા આ બાહ્ય તપ છે. પ્રાયશ્ચિત્ત, વૈયાવચ્ચ, સ્વાધ્યાય, વિનય, કાયોત્સર્ગ અને ધ્યાન એ આંતર તપ છે. બાહ્ય અને આંતર તપની આગ જયારે ભભૂકી ઉઠે છે ત્યારે ભારેથી ય ભારે ને ચીકણાથી ય ચીકણા કર્મો બળીને ખાખ થઈ જાય છે. આત્મન્ ! અનાદિકાળથી તે એક જ કામ કર્યું છે, તારા ગુણોને બાળવાનું. બસ હવે બહું થયું. હવે તું તપની આગ પેટાવ અને તારા કર્મોને ભસ્મીભૂત કરી દે.</p>
+                </div>
+                <!-- Card 10 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
+                    <h3 class="text-xl font-bold text-rose-700 mb-2">ધર્મ સ્વાખ્યાતતા ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">જિનેશ્વર ભગવંતે કેવો સુંદર અને શુદ્ધ ધર્મ કહ્યો ! આ ભાવનાનું નામ છે ધર્મસ્વાખ્યાતતા. જે આ ધર્મનું અવલંબન કરે એ ભવસાગરમાં ન ડુબે. ક્ષમા, કોમળતા, સરળતા, નિઃસંગતા, તપ, સંયમ, સત્ય, શૌચ, અકિંચનતા અને બ્રહ્મચર્ય - આનું નામ જિનધર્મ. ધર્મ તને બધા જ દુઃખોથી બચાવવા માટે સક્ષમ છે. ખરી માતા, ખરા પિતા, ખરો સ્વજન ને ખરો મિત્ર ધર્મ સિવાય બીજો કોઈ જ નથી. દરિયો પૃથ્વી પર ફરી નથી વળતો એ ધર્મનો પ્રભાવ છે. યોગ્ય સમયે વાદળ વરસે છે એ ધર્મનો પ્રભાવ છે. આગ ત્રાંસી નથી જતી ને પવન ઉપર નથી વાતો એ ધર્મનો પ્રભાવ છે. અનંત અલોકમાં ચૌદ રાજલોક અદ્ધર સ્થિર છે એ ધર્મનો પ્રભાવ છે. સૂર્ય અને ચન્દ્ર ઉગે છે ને દુનિયા ટકી શકે છે એ ધર્મનો પ્રભાવ છે. આત્મન્ ! બાહ્ય અને આંતર બધી જ સુખ-સમૃદ્ધિનો એક માત્ર સ્રોત ધર્મ જ છે, બીજું કશું જ નહીં.</p>
+                </div>
+                <!-- Card 11 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                    <h3 class="text-xl font-bold text-red-700 mb-2">લોકસ્વભાવ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">પગ પહોળા કરીને બંને હાથ કમર પર રાખીને ઊભેલો માનવ હોય એનો જેવો આકાર હોય, એવા આકારનું આ વિશ્વ છે. દેવલોકોમાં દિવ્ય નાટક ને સંગીત ચાલી રહ્યા છે ને નરકની અંદર હાહાકાર મચેલો છે. અસંખ્ય દ્વીપ-સમુદ્રોની અંદર પશુ-પંખી-જળચરો એક-બીજાને જીવતા ચાવી રહ્યા છે, તો અનંતાનંત નિગોદના જીવો સતત જન્મ-મરણ કરી રહ્યા છે. એક બાજુ લગ્નની મહેફિલમાં કોઈ ગાંડા બનીને નાચી રહ્યા છે તો એ જ સમયે ક્યાંક પ્રિય સ્વજનના મૃત્યુ પર બીજા માથું પછાડીને રડી રહ્યા છે. ક્યાંક ઉત્સવો છે, ક્યાંક યુદ્ધો છે, ક્યાંક હર્ષ ઉમટી રહ્યો છે, ક્યાંક શોકના દરિયાએ બધું જ ખલાસ કરી દીધું છે. ક્યાંક તીવ્ર સુખ છે, ક્યાંક તીક્ષ્ણ દુઃખ છે. આત્મન્ ! તું વિવેકદષ્ટિથી આ વિશ્વને જો. એનાથી તને તારા સુખ-દુઃખ વજૂદ વગરના લાગશે. તારું મન સ્થિર થશે અને એની સાથે જ તારી ભીતર અધ્યાત્મ-સુખના ઝરા ફૂટી નીકળશે.</p>
+                </div>
+                <!-- Card 12 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-xl font-bold text-orange-700 mb-2">બોધિદુર્લભ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">અકામનિર્જરા દ્વારા જ્યારે ટીપે ટીપે પુણ્યનો દરિયો ભરાય ત્યારે આ જીવ સ્થાવરમાંથી ત્રસ બને છે. પુણ્યનો બીજો દરિયો ભરાય ત્યારે એને પંચેન્દ્રિયપણું મળે છે. પુણ્યનો ત્રીજો દરિયો ભરાય એટલે માનવભવ મળે છે. પુણ્યનો ચોથો દરિયો ભરાય એટલે આર્ય દેશ મળે છે. પુણ્યનો પાંચમો દરિયો ભરાય એટલે ઉચ્ચ કુળ મળે છે. પુણ્યનો છઢ્ઢો દરિયો ભરાય એટલે પરિપૂર્ણ ઈન્દ્રિયો મળે છે. પુણ્યનો સાતમો દરિયો ભરાય એટલે પૂરતું આયુષ્ય મળે છે. પુણ્યનો આઠમો દરિયો ભરાય ઍટલે સદ્દગુરુ અને ધર્મશ્રવણ મળે છે. પણ આટ-આટલું મળ્યા પછી પણ જીવને શ્રદ્ધા પ્રગટે અને બોધિલાભ થાય એ દુર્લભ હોય છે. આટલો ઊંચે આવેલો જીવ પણ ફરી પટકાઈ જાય અને નિગોદ ભેગો થઈ જાય. આત્મન્ ! શાંત ચિત્તે વિચાર, કેટલું દુર્લભ છે આ બોધિરત્ન ! માંડ તારા હાથમાં આવ્યું છે. એ અગાધ ભવસાગરમાં પડી જાય, ઍની પહેલા તું તારું કલ્યાણ કરી લે.</p>
+                </div>
+                <!-- Card 13 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                    <h3 class="text-xl font-bold text-amber-700 mb-2">મૈત્રી ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">દુનિયામાં કોઈ પાપો ન કરો અને દુનિયામાં કોઈ દુઃખી ન થાઓ. બધાં જીવો મોક્ષ પામો, આવી ભાવનાનું નામ છે મૈત્રી. આત્મન્ ! તું વિચાર કે તારું કોઈ જ દુશ્મન નથી, બધા જ તારા મિત્ર છે, બધા જ જીવો અનંતવાર તારા વ્હાલસોયા સ્વજન બની ચૂક્યા છે, એમાં કોણ તારું દુશ્મન છે ? આ તો તારો જ આખો પરિવાર છે. તું વિચાર કે આ ઍકેન્દ્રિય વગેરે ૪ જીવો ય જલ્દીમાં જલ્દી ઊંચા આવે, બોધિલાભ પામે અને સર્વ દુઃખોથી હંમેશ માટે મુક્ત બની જાય. આત્મન્ ! તારો વ્હાલો દીકરો હોય એને જોઈને તને કેટલો આનંદ થાય ! એ થોડું-ઘણું અજુગતું ય કરે તો ય તને એના માટે કેટલી લાગણી હોય. બસ ! આ જ ભાવ તું આખી દુનિયા માટે લાવી દે. તારા અંતરની બધી જ કલુષિતતા ખતમ થઈ જશે અને આનંદ-આનંદ થઈ જશે.</p>
+                </div>
+                <!-- Card 14 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-bold text-yellow-700 mb-2">પ્રમોદ ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">ગુણીજનોના ગુણોને જોઈને મનોમન આનંદથી નાચી ઉઠવું એનું નામ પ્રમોદ ભાવના. આત્મન્ ! જો અરિહંત ભગવંતોને. કેવા એમના અતિશયો !, કેવો એમનો પુણ્યપ્રતાપ ! ને સમગ્ર વિશ્વ પર કેવો એમનો અજોડ ઉપકાર ! તું સિદ્ધોની સિદ્ધતા જો, આચાર્યોના પંચાચારને જો. ઉપાધ્યાયોના જ્ઞાનદાનને અને સાધુઓની સાધનાને જો. સાડા ત્રણ કરોડ રુંવાડા આનંદથી રાસડા લે ને આત્માના પ્રદેશે પ્રદેશે આનંદ આનંદ છવાઈ જાય એવા આ ગુણો છે. જો આ શ્રાવક-શ્રાવિકાઓને, કેવી અદ્ભુત છે એમની પ્રભુભકિત ! કેવો વાંભ વાંભ ઉછળી રહ્યો છે એમનો સુપાત્રદાનનો ઉલ્લાસ ! તું જો તો ખરો, લગ્નના પહેલા દિવસથી અખંડ બ્રહ્મચર્ય પાળતા દંપતિઓ છે. આયંબિલથી વર્ષીતપ ને શ્રેણિતપ કરનારા તપસ્વીઓ છે. કરોડોના દાન દેનારા ને પોતાના પગારનું કવર ભંડારમાં નાંખી દેનારા ભાગ્યશાળીઓ છે. અરે, ઈતરોમાં ય કેટલાંક જીવો કેટલા ગુણવાન હોય છે ! કેવી વિશુદ્ધ હોય છે એમની માર્ગાનુસારિતાની ભૂમિકા.. બસ, જુઓ ને નાચો, જુઓ ને નાચો. જો આ નાચ આવડી જાય તો સંસારનો બધો જ નાચ મટી જશે.</p>
+                </div>
+                <!-- Card 15 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-lime-500">
+                    <h3 class="text-xl font-bold text-lime-700 mb-2">કરુણા ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">દીન, દુઃખી, ભયભીત, જીવનની ભીખ માંગનારા ને પાપી જીવો માટે એવી લાગણી જાગે કે હું એમના દુઃખો અને પાપોને હરું, એનું નામ કરુણા ભાવના. આત્મન્ ! જો આ દુનિયા કેટલી દુઃખી છે ! સાતે નરકના ચોર્યાશી લાખ નરકાવાસોમાં અસંખ્ય અસંખ્ય નારકો ચીસાચીસ કરી રહ્યા છે. દેવલોકમાં ય કેવા ભયાનક યુદ્ધો ચાલી રહ્યા છે. તિર્યંચો એક-બીજાથી ખાય છે ને એક-બીજાને ખવાય છે, જીવતા કપાય છે, જીવતા બફાય છે ને જીવતા શેકાય છે. કેવી પીડા હશે એમની ! મનુષ્યો પણ ગર્ભાવાસ, જન્મ, રોગ, ઘડપણ, ઉપાધિ, ચિંતા, ગરીબી, મોંઘવારી, મંદી, અપમાનો, અકસ્માતો, ગૃહકલેશો વગેરેથી કેટલા દુ:ખી છે ! આત્મન્ ! તારા દુઃખો કરતા આ દુનિયાના દુઃખો અનંતગણા છે, તું જ કહે તારે તારા દુઃખોના રોદણા રોવા જોઈએ ? કે પછી આ દુનિયાના દુઃખે કરુણાથી પીગળી જવું જોઈએ ?</p>
+                </div>
+                <!-- Card 16 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-700 mb-2">માધ્યસ્થ્ય ભાવના</h3>
+                    <p class="text-gray-700 leading-relaxed">જે જીવો ક્રૂરકર્મી છે, બેફામ દેવ-ગુરુની નિંદા કરનારા છે, ને પોતાની પ્રશંસા કરનાર છે, એવા ભારેકર્મી જીવો માટે ઉપેક્ષાભાવ રાખવો એનું નામ માધ્યસ્થ્ય ભાવના. આત્મન્ ! દુનિયામાં એક પ્રકારના જ જીવો નથી હોતા, જાત-જાતના જીવો હોય છે. બધાને સમજાવવા ને બધાને સુધારવા એ ભગવાન માટે પણ શક્ય હોતું નથી. સંગમ ને જમાલિ જેવાને સુધારવા માટે ભગવાન પણ અસમર્થ હતા. બસ, જે શક્ય નથી એનો આગ્રહ છોડી દે અને માધ્યસ્થ્ય ભાવમાં ડુબી જા. આગ્રહ રાખવામાં એનું સુધરવાનું નથી, પણ તારું બગડવાનું છે. જેની જેવી ગતિ નિશ્ચિત થઈ છે એને એવી જ મતિ જાગવાની છે. ત્યાં તારું કશું જ ચાલવાનું નથી. આત્મન્ ! તું પારકી બધી જ ચિંતા છોડી દે ને તારા શુદ્ધ સ્વભાવમાં ડુબી જા. વિશ્વનું સર્વોત્કૃષ્ટ તીર્થ આ છે - તારો શુદ્ધ સ્વભાવ. એમાં જે શીતળતા છે, એમાં જે શાંતિ છે ને એમાં જે આનંદ છે, એ દુનિયામાં બીજે ક્યાંય નથી.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-8">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="gujarati-text font-semibold">મનીષ વી. શાહ: વોટ્સએપ: 94299 26447: (વડોદરા)</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Get references to the buttons and content divs
+        const btnEn = document.getElementById('btn-en');
+        const btnGu = document.getElementById('btn-gu');
+        const contentEn = document.getElementById('content-en');
+        const contentGu = document.getElementById('content-gu');
+        const mainTitle = document.getElementById('main-title');
+        const authorTitle = document.getElementById('author-title');
+
+        // Function to switch to English
+        function showEnglish() {
+            contentEn.classList.remove('hidden');
+            contentGu.classList.add('hidden');
+            
+            btnEn.classList.add('active-lang');
+            btnEn.classList.remove('inactive-lang');
+            
+            btnGu.classList.add('inactive-lang');
+            btnGu.classList.remove('active-lang');
+
+            mainTitle.textContent = 'The 16 Contemplations';
+            mainTitle.classList.remove('gujarati-text');
+            authorTitle.textContent = 'Written by Acharya Shri Hemchandrasuri';
+            authorTitle.classList.remove('gujarati-text');
+        }
+
+        // Function to switch to Gujarati
+        function showGujarati() {
+            contentEn.classList.add('hidden');
+            contentGu.classList.remove('hidden');
+
+            btnGu.classList.add('active-lang');
+            btnGu.classList.remove('inactive-lang');
+            
+            btnEn.classList.add('inactive-lang');
+            btnEn.classList.remove('active-lang');
+
+            mainTitle.textContent = '૧૬ ભાવના';
+            mainTitle.classList.add('gujarati-text');
+            authorTitle.textContent = 'આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા લખાયેલ';
+            authorTitle.classList.add('gujarati-text');
+        }
+
+        // Add click event listeners to the buttons
+        btnEn.addEventListener('click', showEnglish);
+        btnGu.addEventListener('click', showGujarati);
+
+        // Set the initial state (English is shown by default)
+        document.addEventListener('DOMContentLoaded', showEnglish);
+    </script>
+
+</body>
+</html>

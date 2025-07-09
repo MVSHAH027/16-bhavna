@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>૧૬ ભાવના ક્વિઝ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        :root {
+            --primary-color: #4A90E2; /* A calm blue */
+            --background-color: #f4f7f9;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --light-text-color: #555555;
+            --border-color: #e0e0e0;
+            --correct-bg: #e8f5e9; /* Light Green */
+            --correct-border: #4caf50; /* Green */
+            --wrong-bg: #ffebee;   /* Light Red */
+            --wrong-border: #f44336;   /* Red */
+            --explanation-bg: #fffde7; /* Light Yellow */
+            --explanation-border: #ffc107; /* Amber */
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Gujarati', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+        }
+
+        .sub-title {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            margin: 0;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 2px solid var(--border-color);
+            background-color: transparent;
+            color: var(--light-text-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .lang-btn:not(.active):hover {
+            background-color: #e9eff5;
+            border-color: var(--primary-color);
+        }
+
+        /* Quiz Container */
+        #quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Question Card */
+        .question-card {
+            background-color: var(--card-background);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+        }
+
+        /* Options */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .option-btn {
+            width: 100%;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 1rem;
+            background-color: var(--background-color);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .option-btn:not([disabled]):hover {
+            border-color: var(--primary-color);
+            background-color: #e9eff5;
+        }
+
+        .option-btn.correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .option-btn.wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+            font-weight: 600;
+            color: #c62828;
+        }
+        
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.9;
+        }
+        
+        /* Explanation Box */
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--explanation-bg);
+            border-left: 5px solid var(--explanation-border);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .explanation strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--light-text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="main-title" id="main-title">૧૬ ભાવના ક્વિઝ</h1>
+            <p class="sub-title" id="sub-title">આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા રચિત</p>
+            <div class="lang-switcher">
+                <button class="lang-btn active" id="lang-gu" onclick="switchLanguage('gu')">ગુજરાતી</button>
+                <button class="lang-btn" id="lang-en" onclick="switchLanguage('en')">English</button>
+            </div>
+        </header>
+
+        <main id="quiz-container">
+            <!-- Questions will be dynamically inserted here by JavaScript -->
+        </main>
+
+        <footer>
+            <p id="footer-text">મનીષ વી. શાહ: વોટ્સએપ: 94299 26447: (વડોદરા)</p>
+        </footer>
+    </div>
+
+    <script>
+        // Data for all questions, explanations, and options in both languages.
+        const questionsData = [
+            {
+                id: 1,
+                question_gu: "અનિત્ય ભાવના અનુસાર, આમાંથી કઈ વસ્તુ શાશ્વત છે?",
+                question_en: "According to Anitya Bhavana, which of these is eternal?",
+                options_gu: ["શરીર", "સંપત્તિ", "આત્મા", "યૌવન"],
+                options_en: ["Body", "Wealth", "Soul", "Youth"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'આત્મા' છે. અનિત્ય ભાવના શીખવે છે કે શરીર, સંપત્તિ અને યૌવન જેવી બધી ભૌતિક વસ્તુઓ નાશવંત છે, જ્યારે આત્મા શાશ્વત અને નિત્ય છે.",
+                explanation_en: "The correct answer is 'Soul'. Anitya Bhavana teaches that all material things like the body, wealth, and youth are impermanent, whereas the soul is eternal and permanent."
+            },
+            {
+                id: 2,
+                question_gu: "અશરણ ભાવના મુજબ, સાચું શરણ કોણ આપી શકે છે?",
+                question_en: "According to Asharan Bhavana, who can provide true refuge?",
+                options_gu: ["રાજા", "દેવ", "સ્વજન", "જિનધર્મ"],
+                options_en: ["King", "Gods", "Relatives", "Jain Dharma"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'જિનધર્મ' છે. અશરણ ભાવના સ્પષ્ટ કરે છે કે રાજા, દેવો કે સ્વજનો પણ જન્મ, જરા અને મરણના દુઃખોથી બચાવી શકતા નથી. માત્ર જિનધર્મ જ સાચું અને કાયમી શરણ છે.",
+                explanation_en: "The correct answer is 'Jain Dharma'. Asharan Bhavana clarifies that even kings, gods, or relatives cannot save one from the sorrows of birth, old age, and death. Only Jain Dharma is the true and permanent refuge."
+            },
+            {
+                id: 3,
+                question_gu: "એકત્વ ભાવના શું શીખવે છે? આમાંથી જુદું શું છે?",
+                question_en: "What does Ekatva Bhavana teach? What is the odd one out?",
+                options_gu: ["જીવ એકલો જન્મે છે", "જીવ એકલો મરે છે", "તમારો પરિવાર હંમેશા સાથે રહે છે", "તારું કોઈ નથી, તું કોઈનો નથી"],
+                options_en: ["The soul is born alone", "The soul dies alone", "Your family always stays with you", "You belong to no one, no one belongs to you"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'તમારો પરિવાર હંમેશા સાથે રહે છે' છે. એકત્વ ભાવના એ વિચાર પર ભાર મૂકે છે કે જીવ એકલો જ જન્મે છે અને મરે છે. પરિવાર અને અન્ય સંબંધો ક્ષણિક છે અને કોઈ કાયમ માટે સાથે રહેતું નથી.",
+                explanation_en: "The correct answer is 'Your family always stays with you'. Ekatva Bhavana emphasizes the idea that the soul is born and dies alone. Family and other relationships are temporary, and no one stays with you forever."
+            },
+            {
+                id: 4,
+                question_gu: "અન્યત્વ ભાવના અનુસાર, આત્માથી શું ભિન્ન નથી?",
+                question_en: "According to Anyatva Bhavana, what is NOT different from the soul?",
+                options_gu: ["શરીર", "ઘર", "ધન", "ચૈતન્ય"],
+                options_en: ["Body", "House", "Wealth", "Consciousness"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'ચૈતન્ય' છે. અન્યત્વ ભાવના શીખવે છે કે આત્મા તેના શરીર, ઘર અને સંપત્તિથી સંપૂર્ણપણે અલગ છે. ચૈતન્ય (જ્ઞાન) એ આત્માનો પોતાનો ગુણ છે, તેનાથી અલગ નથી.",
+                explanation_en: "The correct answer is 'Consciousness'. Anyatva Bhavana teaches that the soul is completely separate from its body, house, and wealth. Consciousness is an intrinsic quality of the soul, not separate from it."
+            },
+            {
+                id: 5,
+                question_gu: "અશુચિ ભાવના મુજબ, આમાંથી શું પરમ શુચિ (શુદ્ધ) છે?",
+                question_en: "According to Ashuchi Bhavana, which of these is supremely pure?",
+                options_gu: ["શરીર", "અત્તર", "આત્મા", "સાબુ"],
+                options_en: ["Body", "Perfume", "Soul", "Soap"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'આત્મા' છે. અશુચિ ભાવના શરીરને ગંદકી અને અશુદ્ધિઓથી ભરેલું માને છે. સાબુ અને અત્તર તેને માત્ર બાહ્ય રીતે સાફ કરી શકે છે. આત્મા તેના મૂળ સ્વભાવમાં પરમ શુદ્ધ છે.",
+                explanation_en: "The correct answer is 'Soul'. Ashuchi Bhavana considers the body to be full of filth and impurities. Soap and perfume can only clean it externally. The soul, in its true nature, is supremely pure."
+            },
+            {
+                id: 6,
+                question_gu: "આશ્રવ ભાવના અનુસાર, કર્મનો આશ્રવ (આગમન) રોકવાનો ઉપાય કયો છે?",
+                question_en: "According to Aasrav Bhavana, what is the method to STOP the influx of karma?",
+                options_gu: ["મિથ્યાત્વ", "અવિરતિ", "કષાય", "સંવર"],
+                options_en: ["Wrong Belief", "Non-restraint", "Passions", "Stoppage (Samvar)"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'સંવર' છે. મિથ્યાત્વ, અવિરતિ અને કષાય એ કર્મોના આશ્રવના કારણો છે. સંવર એ કર્મોના આગમનને રોકવાની પ્રક્રિયા છે, જે આશ્રવથી વિપરીત છે.",
+                explanation_en: "The correct answer is 'Stoppage (Samvar)'. Wrong belief, non-restraint, and passions are causes for the influx of karma (Aasrav). Samvar is the process of stopping the influx of karma, which is the opposite of Aasrav."
+            },
+            {
+                id: 7,
+                question_gu: "સંવર ભાવનામાં, ક્રોધને રોકવા માટે શું સૂચવવામાં આવ્યું છે?",
+                question_en: "In Samvar Bhavana, what is suggested to stop anger?",
+                options_gu: ["ક્ષમા", "અભિમાન", "માયા", "લોભ"],
+                options_en: ["Forgiveness", "Arrogance", "Deceit", "Greed"],
+                correct_answer_index: 0,
+                explanation_gu: "સાચો જવાબ 'ક્ષમા' છે. સંવર ભાવના શીખવે છે કે ક્ષમાથી ક્રોધને, કોમળતાથી અભિમાનને, સરળતાથી માયાને અને સંતોષથી લોભને રોકી શકાય છે.",
+                explanation_en: "The correct answer is 'Forgiveness'. Samvar Bhavana teaches that anger can be stopped by forgiveness, arrogance by humility, deceit by straightforwardness, and greed by contentment."
+            },
+            {
+                id: 8,
+                question_gu: "નિર્જરા ભાવનામાં, કયું બાહ્ય તપ નથી?",
+                question_en: "In Nirjara Bhavana, which is NOT an external austerity (tapa)?",
+                options_gu: ["ઉપવાસ", "ઉણોદરી", "સ્વાધ્યાય", "કાયકલેશ"],
+                options_en: ["Fasting", "Eating less than one's fill", "Self-study", "Enduring physical hardship"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'સ્વાધ્યાય' છે. ઉપવાસ, ઉણોદરી અને કાયકલેશ બાહ્ય તપ છે. સ્વાધ્યાય (શાસ્ત્રોનો અભ્યાસ) એ આંતર (આંતરિક) તપ છે.",
+                explanation_en: "The correct answer is 'Self-study'. Fasting, eating less, and enduring physical hardship are external austerities. Self-study (of scriptures) is an internal austerity (Abhyantar Tapa)."
+            },
+            {
+                id: 9,
+                question_gu: "ધર્મ સ્વાખ્યાતતા ભાવના અનુસાર, ધર્મનું લક્ષણ શું નથી?",
+                question_en: "According to Dharma Swakhyatata Bhavana, which is NOT a characteristic of Dharma?",
+                options_gu: ["ક્ષમા", "સંયમ", "સત્ય", "કષાય"],
+                options_en: ["Forgiveness", "Control", "Truth", "Passions"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'કષાય' છે. જિનધર્મના દસ લક્ષણોમાં ક્ષમા, સંયમ અને સત્યનો સમાવેશ થાય છે. કષાય (ક્રોધ, માન, માયા, લોભ) એ ધર્મથી વિપરીત છે.",
+                explanation_en: "The correct answer is 'Passions'. The ten characteristics of Jain Dharma include forgiveness, control, and truth. Passions (anger, pride, deceit, greed) are the opposite of Dharma."
+            },
+            {
+                id: 10,
+                question_gu: "બોધિદુર્લભ ભાવનામાં, શું સૌથી દુર્લભ માનવામાં આવે છે?",
+                question_en: "In Bodhidurlabh Bhavana, what is considered the most difficult to attain?",
+                options_gu: ["માનવભવ", "ઉચ્ચ કુળ", "પૂરતું આયુષ્ય", "બોધિલાભ (શ્રદ્ધા)"],
+                options_en: ["Human birth", "High family", "Full lifespan", "Enlightenment (Faith)"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'બોધિલાભ (શ્રદ્ધા)' છે. માનવભવ, ઉચ્ચ કુળ અને આયુષ્ય જેવી બધી અનુકૂળતાઓ મળ્યા પછી પણ, સાચી શ્રદ્ધા અને જ્ઞાન (બોધિ) પ્રાપ્ત કરવું અત્યંત દુર્લભ છે.",
+                explanation_en: "The correct answer is 'Enlightenment (Faith)'. Even after attaining all favorable conditions like a human birth, a high family, and a full lifespan, it is extremely rare to attain true faith and knowledge (Bodhi)."
+            },
+            {
+                id: 11,
+                question_gu: "મૈત્રી ભાવનામાં કયો ભાવ શામેલ નથી?",
+                question_en: "Which feeling is NOT included in Maitri Bhavana?",
+                options_gu: ["બધા જીવો સુખી થાઓ", "કોઈ પાપ ન કરો", "બધા મોક્ષ પામો", "દુશ્મનોને સજા મળે"],
+                options_en: ["May all beings be happy", "May no one commit sin", "May all attain liberation", "May enemies be punished"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'દુશ્મનોને સજા મળે' છે. મૈત્રી ભાવના સર્વ જીવો માટે મિત્રતા અને કલ્યાણની ભાવના છે, જેમાં કોઈના માટે ખરાબ વિચારને સ્થાન નથી.",
+                explanation_en: "The correct answer is 'May enemies be punished'. Maitri Bhavana is a feeling of friendship and well-being for all living beings, which has no room for ill will towards anyone."
+            },
+            {
+                id: 12,
+                question_gu: "પ્રમોદ ભાવના કોના પ્રત્યે આનંદ વ્યક્ત કરવાનું શીખવે છે?",
+                question_en: "Towards whom does Pramod Bhavana teach us to express joy?",
+                options_gu: ["ગુણીજનો", "પાપી જીવો", "ક્રૂરકર્મી જીવો", "નિંદા કરનારા"],
+                options_en: ["Virtuous people", "Sinful beings", "Cruel beings", "Slanderers"],
+                correct_answer_index: 0,
+                explanation_gu: "સાચો જવાબ 'ગુણીજનો' છે. પ્રમોદ ભાવના એટલે ગુણી વ્યક્તિઓના ગુણોને જોઈને પ્રસન્ન થવું અને તેમની પ્રશંસા કરવી.",
+                explanation_en: "The correct answer is 'Virtuous people'. Pramod Bhavana means to be pleased and appreciate the virtues of virtuous individuals."
+            },
+            {
+                id: 13,
+                question_gu: "કરુણા ભાવના કોના માટે નથી?",
+                question_en: "For whom is Karuna Bhavana NOT intended?",
+                options_gu: ["દીન-દુઃખી જીવો", "ભયભીત જીવો", "પાપી જીવો", "ગુણી અને સુખી જીવો"],
+                options_en: ["The poor and miserable", "Frightened beings", "Sinful beings", "Virtuous and happy beings"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'ગુણી અને સુખી જીવો' છે. કરુણા ભાવના દુઃખી, પીડિત અને પાપમાં ફસાયેલા જીવો પ્રત્યે દયા અને સહાયતાની ભાવના છે. ગુણીજનો માટે પ્રમોદ ભાવના હોય છે.",
+                explanation_en: "The correct answer is 'Virtuous and happy beings'. Karuna Bhavana is the feeling of compassion and help towards those who are suffering, in pain, or trapped in sin. For virtuous people, there is Pramod Bhavana."
+            },
+            {
+                id: 14,
+                question_gu: "માધ્યસ્થ્ય ભાવના કોના પ્રત્યે રાખવાની છે?",
+                question_en: "Towards whom should one maintain Madhyasthya Bhavana (equanimity)?",
+                options_gu: ["ગુણીજનો", "દુઃખી જીવો", "ક્રૂરકર્મી અને નિંદક જીવો", "બધા મિત્રો"],
+                options_en: ["Virtuous people", "Suffering beings", "Cruel and slanderous beings", "All friends"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'ક્રૂરકર્મી અને નિંદક જીવો' છે. માધ્યસ્થ્ય ભાવના એટલે જે જીવો સુધારવા યોગ્ય નથી અથવા જેઓ દ્વેષપૂર્ણ છે, તેમના પ્રત્યે ઉપેક્ષા કે સમભાવ રાખવો, જેથી આપણું મન કલુષિત ન થાય.",
+                explanation_en: "The correct answer is 'Cruel and slanderous beings'. Madhyasthya Bhavana means to maintain neutrality or equanimity towards beings who are incorrigible or hateful, so that our own mind does not get tainted."
+            },
+            {
+                id: 15,
+                question_gu: "સંસાર ભાવના અનુસાર, આમાંથી કયો અનુભવ જીવે અનંતવાર નથી કર્યો?",
+                question_en: "According to Sansar Bhavana, which experience has the soul NOT had infinite times?",
+                options_gu: ["ચોર્યાશી લાખ યોનિમાં જન્મ", "સર્વ જીવો સાથે સંબંધ", "અનંત સુખ અને દુઃખ", "મોક્ષની પ્રાપ્તિ"],
+                options_en: ["Birth in 8.4 million life forms", "Relationships with all beings", "Infinite happiness and sorrow", "Attainment of liberation (Moksha)"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'મોક્ષની પ્રાપ્તિ' છે. સંસાર ભાવના વર્ણવે છે કે જીવે સંસારમાં દરેક પ્રકારના જન્મ, સંબંધ અને સુખ-દુઃખ અનંતવાર ભોગવ્યા છે, પરંતુ મોક્ષ હજુ સુધી પ્રાપ્ત કર્યો નથી.",
+                explanation_en: "The correct answer is 'Attainment of liberation (Moksha)'. Sansar Bhavana describes that the soul has experienced every type of birth, relationship, and pleasure-pain in the cycle of existence infinite times, but has not yet attained liberation."
+            },
+            {
+                id: 16,
+                question_gu: "નિર્જરા ભાવનામાં, કયું આંતર તપ છે?",
+                question_en: "In Nirjara Bhavana, which is an internal austerity (tapa)?",
+                options_gu: ["રસત્યાગ", "સંલીનતા", "પ્રાયશ્ચિત્ત", "ઉપવાસ"],
+                options_en: ["Renunciation of tasty foods", "Solitude", "Atonement", "Fasting"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'પ્રાયશ્ચિત્ત' છે. રસત્યાગ, સંલીનતા અને ઉપવાસ બાહ્ય તપ છે. પ્રાયશ્ચિત્ત, વિનય, વૈયાવચ્ચ, સ્વાધ્યાય, ધ્યાન અને કાયોત્સર્ગ એ આંતર તપ છે.",
+                explanation_en: "The correct answer is 'Atonement'. Renunciation of tasty foods, solitude, and fasting are external austerities. Atonement, reverence, service, self-study, meditation, and abandonment of the body are internal austerities."
+            },
+            {
+                id: 17,
+                question_gu: "આમાંથી કયું અનિત્ય નથી?",
+                question_en: "Which of the following is NOT impermanent?",
+                options_gu: ["ઘર", "સત્તા", "આરોગ્ય", "જ્ઞાન ગુણ"],
+                options_en: ["House", "Power", "Health", "Quality of Knowledge"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'જ્ઞાન ગુણ' છે. ઘર, સત્તા અને આરોગ્ય એ બધું જ અનિત્ય અને નાશવંત છે. આત્માનો જ્ઞાન ગુણ એ આત્માની જેમ જ શાશ્વત છે.",
+                explanation_en: "The correct answer is 'Quality of Knowledge'. A house, power, and health are all impermanent and perishable. The soul's quality of knowledge is eternal, just like the soul itself."
+            },
+            {
+                id: 18,
+                question_gu: "આશ્રવના કારણોમાં કોનો સમાવેશ થતો નથી?",
+                question_en: "Which is NOT included among the causes of Aasrav (influx)?",
+                options_gu: ["યોગ", "કષાય", "મિથ્યાત્વ", "ગુપ્તિ"],
+                options_en: ["Activities (Yoga)", "Passions", "Wrong Belief", "Control (Gupti)"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'ગુપ્તિ' છે. મિથ્યાત્વ, અવિરતિ, કષાય અને યોગ એ આશ્રવના ચાર મુખ્ય કારણો છે. ગુપ્તિ (મન, વચન, કાયા પર નિયંત્રણ) એ સંવરનો એક ભાગ છે, જે આશ્રવને રોકે છે.",
+                explanation_en: "The correct answer is 'Control (Gupti)'. Wrong belief, non-restraint, passions, and activities are the four main causes of Aasrav. Gupti (control over mind, speech, and body) is a part of Samvar, which stops the influx."
+            },
+            {
+                id: 19,
+                question_gu: "લોકસ્વભાવ ભાવના અનુસાર, વિશ્વમાં શું જોવા મળતું નથી?",
+                question_en: "According to Lokasvabhava Bhavana, what is NOT observed in the universe?",
+                options_gu: ["ક્યાંક સુખ, ક્યાંક દુઃખ", "દેવલોકમાં નાટક", "નરકમાં હાહાકાર", "બધે માત્ર શાંતિ"],
+                options_en: ["Happiness somewhere, sorrow elsewhere", "Drama in heavens", "Chaos in hell", "Only peace everywhere"],
+                correct_answer_index: 3,
+                explanation_gu: "સાચો જવાબ 'બધે માત્ર શાંતિ' છે. લોકસ્વભાવ ભાવના વિશ્વની વાસ્તવિકતા દર્શાવે છે, જ્યાં સુખ-દુઃખ, જન્મ-મરણ, ઉત્સવ-યુદ્ધ એક સાથે અસ્તિત્વ ધરાવે છે. સર્વત્ર શાંતિ એ સંસારનું સ્વરૂપ નથી.",
+                explanation_en: "The correct answer is 'Only peace everywhere'. Lokasvabhava Bhavana shows the reality of the universe, where happiness and sorrow, birth and death, festivals and wars coexist. Universal peace is not the nature of this world (sansar)."
+            },
+            {
+                id: 20,
+                question_gu: "અન્યત્વ ભાવના શું કહે છે? આમાંથી શું જુદું પડે છે?",
+                question_en: "What does Anyatva Bhavana say? Which of these is the odd one out?",
+                options_gu: ["શરીર જડ છે, તું ચેતન", "શરીર નશ્વર છે, તું શાશ્વત", "શરીર અને આત્મા એક જ છે", "શરીર અશુચિ છે, તું શુચિ"],
+                options_en: ["Body is inert, you are conscious", "Body is perishable, you are eternal", "Body and soul are one and the same", "Body is impure, you are pure"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'શરીર અને આત્મા એક જ છે' છે. અન્યત્વ ભાવના શરીર અને આત્માના જુદાપણા પર ભાર મૂકે છે. તે શીખવે છે કે બંનેના ગુણધર્મો તદ્દન વિપરીત છે.",
+                explanation_en: "The correct answer is 'Body and soul are one and the same'. Anyatva Bhavana emphasizes the separateness of the body and the soul. It teaches that their properties are completely opposite."
+            },
+            {
+                id: 21,
+                question_gu: "આમાંથી કઈ ભાવના ગુણીજનોના ગુણ જોઈને રાજી થવા પર કેન્દ્રિત છે?",
+                question_en: "Which of these reflections focuses on feeling happy by seeing the virtues of others?",
+                options_gu: ["મૈત્રી ભાવના", "પ્રમોદ ભાવના", "કરુણા ભાવના", "માધ્યસ્થ્ય ભાવના"],
+                options_en: ["Maitri Bhavana (Friendship)", "Pramod Bhavana (Appreciation)", "Karuna Bhavana (Compassion)", "Madhyasthya Bhavana (Equanimity)"],
+                correct_answer_index: 1,
+                explanation_gu: "સાચો જવાબ 'પ્રમોદ ભાવના' છે. પ્રમોદ ભાવના એટલે અન્યના સદ્ગુણો, જ્ઞાન અને સાધનાને જોઈને હૃદયમાં આનંદ અને અનુમોદનાનો ભાવ જાગવો.",
+                explanation_en: "The correct answer is 'Pramod Bhavana (Appreciation)'. Pramod Bhavana means to feel joy and appreciation in the heart upon seeing the virtues, knowledge, and spiritual practices of others."
+            },
+            {
+                id: 22,
+                question_gu: "આમાંથી કયું સંવરનું ઉદાહરણ નથી?",
+                question_en: "Which of the following is NOT an example of Samvar (stoppage)?",
+                options_gu: ["ક્ષમાથી ક્રોધને રોકવો", "સંતોષથી લોભને રોકવો", "અભિમાનથી કોમળતાને રોકવી", "સરળતાથી માયાને રોકવી"],
+                options_en: ["Stopping anger with forgiveness", "Stopping greed with contentment", "Stopping humility with arrogance", "Stopping deceit with straightforwardness"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'અભિમાનથી કોમળતાને રોકવી' છે. સંવર એટલે કર્મના આશ્રવને રોકતા સદ્ગુણો. અભિમાન એ કષાય છે જે કર્મને બાંધે છે, રોકતો નથી. કોમળતાથી અભિમાનને રોકાય છે.",
+                explanation_en: "The correct answer is 'Stopping humility with arrogance'. Samvar involves virtues that stop the influx of karma. Arrogance is a passion (kashay) that binds karma, it doesn't stop it. Arrogance is stopped by humility."
+            },
+            {
+                id: 23,
+                question_gu: "અશુચિ ભાવના અનુસાર, શરીરને શું માનવામાં આવે છે?",
+                question_en: "According to Ashuchi Bhavana, what is the body considered to be?",
+                options_gu: ["ગંદકીનું ઘર", "આત્માનું મંદિર", "સૌંદર્યનું પ્રતિક", "પરમ શુદ્ધ વસ્તુ"],
+                options_en: ["A house of filth", "A temple for the soul", "A symbol of beauty", "A supremely pure object"],
+                correct_answer_index: 0,
+                explanation_gu: "સાચો જવાબ 'ગંદકીનું ઘર' છે. અશુચિ ભાવના શરીરની અંદરની અશુદ્ધિઓ પર ધ્યાન કેન્દ્રિત કરે છે અને તેને નવ છિદ્રોમાંથી સતત ગંદકી ઝરતું પાત્ર ગણે છે.",
+                explanation_en: "The correct answer is 'A house of filth'. Ashuchi Bhavana focuses on the internal impurities of the body, considering it a vessel that constantly oozes filth from its nine orifices."
+            },
+            {
+                id: 24,
+                question_gu: "આમાંથી કઈ ભાવના દુઃખી જીવો પ્રત્યે દયા રાખવા પર ભાર મૂકે છે?",
+                question_en: "Which reflection emphasizes having compassion for suffering beings?",
+                options_gu: ["પ્રમોદ ભાવના", "માધ્યસ્થ્ય ભાવના", "કરુણા ભાવના", "એકત્વ ભાવના"],
+                options_en: ["Pramod Bhavana (Appreciation)", "Madhyasthya Bhavana (Equanimity)", "Karuna Bhavana (Compassion)", "Ekatva Bhavana (Solitude)"],
+                correct_answer_index: 2,
+                explanation_gu: "સાચો જવાબ 'કરુણા ભાવના' છે. કરુણા ભાવના એટલે સંસારના દીન, દુઃખી, અને પીડિત જીવોના દુઃખને દૂર કરવાની તીવ્ર ભાવના રાખવી.",
+                explanation_en: "The correct answer is 'Karuna Bhavana (Compassion)'. Karuna Bhavana means to have an intense feeling of wanting to alleviate the suffering of the poor, miserable, and afflicted beings of the world."
+            }
+        ];
+
+        let currentLanguage = 'gu';
+        let shuffledQuestions = [];
+
+        // UI Text elements for language switching
+        const uiText = {
+            gu: {
+                mainTitle: "૧૬ ભાવના ક્વિઝ",
+                subTitle: "આચાર્ય શ્રી હેમચન્દ્રસૂરિ દ્વારા રચિત",
+                questionHeader: "આમાંથી વિષમ શું છે તે શોધો:",
+                explanationHeader: "સમજૂતી:",
+                footerText: "મનીષ વી. શાહ: વોટ્સએપ: 94299 26447: (વડોદરા)"
+            },
+            en: {
+                mainTitle: "16 Bhavana Quiz",
+                subTitle: "Composed by Acharya Shri Hemchandrasuri",
+                questionHeader: "Find the odd one out:",
+                explanationHeader: "Explanation:",
+                footerText: "Manish V. Shah: WhatsApp: 94299 26447: (Vadodara)"
+            }
+        };
+        
+        // Function to shuffle an array (Fisher-Yates shuffle)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Function to render the entire quiz
+        function renderQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Clear previous content
+
+            shuffledQuestions.forEach(question => {
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.id = `card-${question.id}`;
+
+                const questionText = document.createElement('p');
+                questionText.className = 'question-text';
+                questionText.textContent = `${uiText[currentLanguage].questionHeader} ${question[`question_${currentLanguage}`]}`;
+                
+                const optionsGrid = document.createElement('div');
+                optionsGrid.className = 'options-grid';
+
+                question[`options_${currentLanguage}`].forEach((option, index) => {
+                    const button = document.createElement('button');
+                    button.className = 'option-btn';
+                    button.textContent = option;
+                    button.onclick = (event) => checkAnswer(event, question.id, index);
+                    optionsGrid.appendChild(button);
+                });
+
+                const explanation = document.createElement('div');
+                explanation.className = 'explanation';
+                explanation.id = `explanation-${question.id}`;
+                explanation.innerHTML = `<strong>${uiText[currentLanguage].explanationHeader}</strong> ${question[`explanation_${currentLanguage}`]}`;
+                
+                questionCard.appendChild(questionText);
+                questionCard.appendChild(optionsGrid);
+                questionCard.appendChild(explanation);
+                quizContainer.appendChild(questionCard);
+            });
+        }
+
+        // Function to check the selected answer
+        function checkAnswer(event, questionId, selectedOptionIndex) {
+            const question = shuffledQuestions.find(q => q.id === questionId);
+            const card = document.getElementById(`card-${questionId}`);
+            const options = card.querySelectorAll('.option-btn');
+            const explanation = document.getElementById(`explanation-${questionId}`);
+            
+            const selectedButton = event.target;
+            const correctIndex = question.correct_answer_index;
+
+            // Disable all buttons for this question
+            options.forEach(btn => btn.disabled = true);
+
+            if (selectedOptionIndex === correctIndex) {
+                selectedButton.classList.add('correct');
+            } else {
+                selectedButton.classList.add('wrong');
+                options[correctIndex].classList.add('correct');
+            }
+            
+            // Show explanation
+            explanation.style.display = 'block';
+        }
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button styles
+            document.getElementById('lang-gu').classList.toggle('active', lang === 'gu');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            
+            // Update static UI text
+            document.getElementById('main-title').textContent = uiText[lang].mainTitle;
+            document.getElementById('sub-title').textContent = uiText[lang].subTitle;
+            document.getElementById('footer-text').textContent = uiText[lang].footerText;
+            document.documentElement.lang = lang;
+
+            // Re-render the quiz with the new language
+            renderQuiz();
+        }
+
+        // Initial setup on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            shuffledQuestions = [...questionsData]; // Make a copy
+            shuffleArray(shuffledQuestions);
+            switchLanguage('gu'); // Initial render in Gujarati
+        });
+
+    </script>
+</body>
+</html>
